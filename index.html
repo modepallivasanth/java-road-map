@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java & Spring Mastery Roadmap | 4+ YoE Product Company Prep</title>
+  <meta name="description" content="Exhaustive Topic-by-Topic roadmap for Java Developer interviews at product-based companies. Core Java, Concurrency, JVM, Spring Boot, Microservices, System Design and more." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">☕</span>
+        <div>
+          <h1>Java & Spring Mastery Roadmap</h1>
+          <p class="tagline">Complete Topic Map for 4+ YoE Product-Based Companies.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search topics..." autocomplete="off" />
+          <span class="search-icon">🔍</span>
+        </div>
+        <button id="themeToggle" class="icon-btn" title="Toggle dark/light mode">🌙</button>
+        <div class="progress-badge" id="progressBadge">0%</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav id="sideNav">
+        <a href="#core-java" class="nav-item">1. Core Java Deep Dive</a>
+        <a href="#oop" class="nav-item">2. OOP & SOLID</a>
+        <a href="#collections" class="nav-item">3. Collections Internals</a>
+        <a href="#generics" class="nav-item">4. Generics & Type System</a>
+        <a href="#exceptions" class="nav-item">5. Exceptions & Error Handling</a>
+        <a href="#modern-java" class="nav-item">6. Modern Java (8 → 25)</a>
+        <a href="#concurrency" class="nav-item">7. Multithreading & Concurrency</a>
+        <a href="#loom" class="nav-item">8. Virtual Threads & Loom</a>
+        <a href="#jvm" class="nav-item">9. JVM Internals & GC</a>
+        <a href="#patterns" class="nav-item">10. Design Patterns</a>
+        <a href="#dsa" class="nav-item">11. DSA for Interviews</a>
+        <a href="#spring-core" class="nav-item">12. Spring Core & AOP</a>
+        <a href="#spring-boot" class="nav-item">13. Spring Boot</a>
+        <a href="#spring-data" class="nav-item">14. Spring Data / JPA / Hibernate</a>
+        <a href="#spring-security" class="nav-item">15. Spring Security</a>
+        <a href="#spring-web" class="nav-item">16. Spring Web (MVC & WebFlux)</a>
+        <a href="#microservices" class="nav-item">17. Microservices & Spring Cloud</a>
+        <a href="#messaging" class="nav-item">18. Messaging (Kafka / RabbitMQ)</a>
+        <a href="#databases" class="nav-item">19. Databases (SQL + NoSQL)</a>
+        <a href="#caching" class="nav-item">20. Caching Strategies</a>
+        <a href="#testing" class="nav-item">21. Testing</a>
+        <a href="#system-design" class="nav-item">22. System Design</a>
+        <a href="#resilience" class="nav-item">23. Resilience & Observability</a>
+        <a href="#devops" class="nav-item">24. Build, Docker, K8s, CI/CD</a>
+        <a href="#cloud" class="nav-item">25. Cloud (AWS) Basics</a>
+        <a href="#interview" class="nav-item">26. Interview Hard Topics</a>
+      </nav>
+      <button id="resetProgress" class="reset-btn">Reset Progress</button>
+    </aside>
+
+    <main class="content" id="mainContent">
+      <section class="intro">
+        <h2>How to use this roadmap</h2>
+        <p>This is an <strong>exhaustive</strong> topic map for Java Developers targeting product-based companies (Amazon, Google, Microsoft, Uber, Flipkart, etc.) with 4+ years of experience. Go section by section. Check off topics as you master them (progress is saved in your browser). Focus especially on <span class="hard">Hard / Confusing</span> items — these are what separate senior candidates.</p>
+        <p class="note">Tip: For every topic, be ready to explain internals, trade-offs, and write code on a whiteboard or IDE. Practice explaining "why" more than "what".</p>
+      </section>
+
+      <!-- ==================== 1. CORE JAVA ==================== -->
+      <section id="core-java" class="topic-section">
+        <h2><span class="num">01</span> Core Java Deep Dive</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Language Fundamentals (Refresh + Edge Cases)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="c1"> Primitives vs Objects — memory layout, when auto-boxing happens</label></li>
+              <li><label><input type="checkbox" data-id="c2"> Pass-by-value vs Pass-by-reference (Java is always pass-by-value)</label></li>
+              <li><label><input type="checkbox" data-id="c3"> String internals — String Pool, immutability, why String is final</label></li>
+              <li><label><input type="checkbox" data-id="c4"> StringBuilder vs StringBuffer vs String — performance & thread-safety</label></li>
+              <li><label><input type="checkbox" data-id="c5"> equals() and hashCode() contract — breaking it causes bugs in HashMap/HashSet</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="c6"> Immutability — designing truly immutable classes (defensive copies)</label></li>
+              <li><label><input type="checkbox" data-id="c7"> final, static, transient, volatile — exact semantics</label></li>
+              <li><label><input type="checkbox" data-id="c8"> Autoboxing / Unboxing pitfalls (Integer caching -128 to 127)</label> <span class="hard">Confusing</span></li>
+              <li><label><input type="checkbox" data-id="c9"> Wrapper classes deep dive</label></li>
+              <li><label><input type="checkbox" data-id="c10"> Varargs — how they work under the hood</label></li>
+              <li><label><input type="checkbox" data-id="c11"> Enums — constructors, methods, EnumSet, EnumMap</label></li>
+              <li><label><input type="checkbox" data-id="c12"> Nested classes — static nested, inner, local, anonymous</label></li>
+              <li><label><input type="checkbox" data-id="c13"> instanceof, pattern matching for instanceof (Java 16+)</label></li>
+              <li><label><input type="checkbox" data-id="c14"> Object class methods — toString, equals, hashCode, clone, getClass, wait/notify</label></li>
+              <li><label><input type="checkbox" data-id="c15"> clone() deep dive — shallow vs deep, Cloneable marker interface problems</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="c16"> Serialization — Serializable, Externalizable, serialVersionUID, pitfalls</label></li>
+              <li><label><input type="checkbox" data-id="c17"> Reflection API — Class, Method, Field, Constructor, performance cost</label></li>
+              <li><label><input type="checkbox" data-id="c18"> Annotations — retention policies, meta-annotations, custom annotations</label></li>
+              <li><label><input type="checkbox" data-id="c19"> Modules (JPMS) — module-info.java, requires, exports, opens</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>I/O & NIO</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="c20"> java.io streams — InputStream, OutputStream, Reader, Writer hierarchy</label></li>
+              <li><label><input type="checkbox" data-id="c21"> Buffered streams, try-with-resources</label></li>
+              <li><label><input type="checkbox" data-id="c22"> NIO — Channels, Buffers, Selectors</label></li>
+              <li><label><input type="checkbox" data-id="c23"> NIO.2 (java.nio.file) — Path, Files, WatchService</label></li>
+              <li><label><input type="checkbox" data-id="c24"> Asynchronous I/O (AsynchronousFileChannel)</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 2. OOP ==================== -->
+      <section id="oop" class="topic-section">
+        <h2><span class="num">02</span> OOP Deep Dive & SOLID</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Four Pillars + Advanced OOP</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="o1"> Encapsulation — when to break it (and why sometimes you should)</label></li>
+              <li><label><input type="checkbox" data-id="o2"> Inheritance vs Composition — composition over inheritance principle</label> <span class="hard">Key</span></li>
+              <li><label><input type="checkbox" data-id="o3"> Polymorphism — compile-time vs runtime, method overloading vs overriding</label></li>
+              <li><label><input type="checkbox" data-id="o4"> Abstraction — abstract classes vs interfaces (Java 8+ default methods)</label></li>
+              <li><label><input type="checkbox" data-id="o5"> Static vs Dynamic binding</label></li>
+              <li><label><input type="checkbox" data-id="o6"> Method hiding vs overriding</label></li>
+              <li><label><input type="checkbox" data-id="o7"> Covariant return types</label></li>
+              <li><label><input type="checkbox" data-id="o8"> Diamond problem and how Java solves it</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>SOLID Principles (with real violations)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="o9"> Single Responsibility Principle (SRP)</label></li>
+              <li><label><input type="checkbox" data-id="o10"> Open/Closed Principle (OCP)</label></li>
+              <li><label><input type="checkbox" data-id="o11"> Liskov Substitution Principle (LSP) — classic violations</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="o12"> Interface Segregation Principle (ISP)</label></li>
+              <li><label><input type="checkbox" data-id="o13"> Dependency Inversion Principle (DIP)</label></li>
+              <li><label><input type="checkbox" data-id="o14"> Cohesion & Coupling — spotting them in code reviews</label></li>
+              <li><label><input type="checkbox" data-id="o15"> DRY, KISS, YAGNI — when breaking them is justified</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 3. COLLECTIONS ==================== -->
+      <section id="collections" class="topic-section">
+        <h2><span class="num">03</span> Collections Framework Internals</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>List, Set, Queue, Deque</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="col1"> ArrayList internals — capacity, growth factor (1.5x), fail-fast</label></li>
+              <li><label><input type="checkbox" data-id="col2"> LinkedList — doubly linked, when it beats ArrayList</label></li>
+              <li><label><input type="checkbox" data-id="col3"> CopyOnWriteArrayList — use cases & cost</label></li>
+              <li><label><input type="checkbox" data-id="col4"> HashSet, LinkedHashSet, TreeSet — ordering guarantees</label></li>
+              <li><label><input type="checkbox" data-id="col5"> EnumSet — bit vector implementation</label></li>
+              <li><label><input type="checkbox" data-id="col6"> PriorityQueue — binary heap internals</label></li>
+              <li><label><input type="checkbox" data-id="col7"> ArrayDeque vs LinkedList as Queue/Stack</label></li>
+              <li><label><input type="checkbox" data-id="col8"> BlockingQueue implementations — ArrayBlockingQueue, LinkedBlockingQueue, PriorityBlockingQueue, DelayQueue, SynchronousQueue</label></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>Map Family (Most Asked)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="col9"> HashMap internals — hash function, buckets, load factor (0.75), resize, treeification (Java 8+)</label> <span class="hard">Must Know</span></li>
+              <li><label><input type="checkbox" data-id="col10"> HashMap collision handling — linked list → red-black tree</label></li>
+              <li><label><input type="checkbox" data-id="col11"> LinkedHashMap — access-order vs insertion-order (LRU cache)</label></li>
+              <li><label><input type="checkbox" data-id="col12"> TreeMap — red-black tree, NavigableMap</label></li>
+              <li><label><input type="checkbox" data-id="col13"> WeakHashMap, IdentityHashMap, EnumMap</label></li>
+              <li><label><input type="checkbox" data-id="col14"> ConcurrentHashMap — segment locking (pre-Java 8) vs CAS + synchronized (Java 8+)</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="col15"> Hashtable vs ConcurrentHashMap vs Collections.synchronizedMap</label></li>
+              <li><label><input type="checkbox" data-id="col16"> Fail-fast vs Fail-safe iterators</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Utilities & Best Practices</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="col17"> Collections utility class — sort, binarySearch, unmodifiable*, synchronized*</label></li>
+              <li><label><input type="checkbox" data-id="col18"> Arrays utility class</label></li>
+              <li><label><input type="checkbox" data-id="col19"> Choosing the right collection — decision matrix</label></li>
+              <li><label><input type="checkbox" data-id="col20"> Concurrent collections overview — ConcurrentSkipListMap, ConcurrentLinkedQueue, etc.</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 4. GENERICS ==================== -->
+      <section id="generics" class="topic-section">
+        <h2><span class="num">04</span> Generics & Type System</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Deep Generics</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="g1"> Type erasure — what happens at runtime</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="g2"> Bounded type parameters — extends, super</label></li>
+              <li><label><input type="checkbox" data-id="g3"> Wildcards — ? extends T (producer), ? super T (consumer) — PECS principle</label> <span class="hard">Confusing</span></li>
+              <li><label><input type="checkbox" data-id="g4"> Generic methods, constructors</label></li>
+              <li><label><input type="checkbox" data-id="g5"> Type inference & diamond operator</label></li>
+              <li><label><input type="checkbox" data-id="g6"> Bridge methods generated by compiler</label></li>
+              <li><label><input type="checkbox" data-id="g7"> Restrictions — no primitives, no instanceof with parameterized types, no arrays of generics</label></li>
+              <li><label><input type="checkbox" data-id="g8"> Recursive type bounds (e.g. Comparable&lt;T extends Comparable&lt;T&gt;&gt;)</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 5. EXCEPTIONS ==================== -->
+      <section id="exceptions" class="topic-section">
+        <h2><span class="num">05</span> Exception Handling & Best Practices</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Exception Hierarchy & Patterns</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="e1"> Checked vs Unchecked exceptions — when to use which</label></li>
+              <li><label><input type="checkbox" data-id="e2"> Exception hierarchy — Throwable, Error, Exception, RuntimeException</label></li>
+              <li><label><input type="checkbox" data-id="e3"> try-with-resources (AutoCloseable)</label></li>
+              <li><label><input type="checkbox" data-id="e4"> Multi-catch, rethrowing with precise types</label></li>
+              <li><label><input type="checkbox" data-id="e5"> Custom exceptions — when and how</label></li>
+              <li><label><input type="checkbox" data-id="e6"> Exception wrapping / translation pattern</label></li>
+              <li><label><input type="checkbox" data-id="e7"> Suppressed exceptions</label></li>
+              <li><label><input type="checkbox" data-id="e8"> Best practices — never catch Throwable, don't swallow, don't use exceptions for control flow</label></li>
+              <li><label><input type="checkbox" data-id="e9"> StackTraceElement & performance cost of exceptions</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 6. MODERN JAVA ==================== -->
+      <section id="modern-java" class="topic-section">
+        <h2><span class="num">06</span> Modern Java (Java 8 → Java 25)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Java 8 Foundations</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="m1"> Lambda expressions — effectively final, method references</label></li>
+              <li><label><input type="checkbox" data-id="m2"> Functional interfaces — Predicate, Function, Consumer, Supplier, BiFunction, UnaryOperator</label></li>
+              <li><label><input type="checkbox" data-id="m3"> Stream API — intermediate vs terminal, lazy evaluation, short-circuiting</label> <span class="hard">Key</span></li>
+              <li><label><input type="checkbox" data-id="m4"> Collectors — groupingBy, partitioningBy, toMap, collectingAndThen</label></li>
+              <li><label><input type="checkbox" data-id="m5"> Optional — correct usage, orElse vs orElseGet, flatMap, avoid get()</label></li>
+              <li><label><input type="checkbox" data-id="m6"> Default & static methods in interfaces</label></li>
+              <li><label><input type="checkbox" data-id="m7"> New Date/Time API — LocalDate, LocalDateTime, ZonedDateTime, Instant, Duration, Period, DateTimeFormatter</label></li>
+              <li><label><input type="checkbox" data-id="m8"> CompletableFuture basics</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Java 9 – 17 (LTS Focus)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="m9"> Modules (JPMS)</label></li>
+              <li><label><input type="checkbox" data-id="m10"> Private methods in interfaces (Java 9)</label></li>
+              <li><label><input type="checkbox" data-id="m11"> var (local variable type inference) — Java 10</label></li>
+              <li><label><input type="checkbox" data-id="m12"> HTTP Client (java.net.http) — Java 11</label></li>
+              <li><label><input type="checkbox" data-id="m13"> Switch expressions & yield (Java 14)</label></li>
+              <li><label><input type="checkbox" data-id="m14"> Text blocks (Java 15)</label></li>
+              <li><label><input type="checkbox" data-id="m15"> Records — canonical constructor, compact constructor, limitations</label></li>
+              <li><label><input type="checkbox" data-id="m16"> Sealed classes & interfaces (Java 17)</label></li>
+              <li><label><input type="checkbox" data-id="m17"> Pattern matching for switch (preview → final)</label></li>
+              <li><label><input type="checkbox" data-id="m18"> Helpful NullPointerExceptions</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Java 21 – 25 (Latest LTS & beyond)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="m19"> Virtual Threads (final in 21)</label></li>
+              <li><label><input type="checkbox" data-id="m20"> Pattern Matching for switch (final)</label></li>
+              <li><label><input type="checkbox" data-id="m21"> Record Patterns</label></li>
+              <li><label><input type="checkbox" data-id="m22"> Sequenced Collections (Java 21)</label></li>
+              <li><label><input type="checkbox" data-id="m23"> String Templates (preview)</label></li>
+              <li><label><input type="checkbox" data-id="m24"> Unnamed patterns & variables (_)</label></li>
+              <li><label><input type="checkbox" data-id="m25"> Structured Concurrency (preview → evolving)</label></li>
+              <li><label><input type="checkbox" data-id="m26"> Scoped Values (replacement for ThreadLocal in virtual threads)</label></li>
+              <li><label><input type="checkbox" data-id="m27"> Foreign Function & Memory API (Project Panama)</label></li>
+              <li><label><input type="checkbox" data-id="m28"> Stream gatherers (Java 22+)</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 7. CONCURRENCY ==================== -->
+      <section id="concurrency" class="topic-section">
+        <h2><span class="num">07</span> Multithreading & Concurrency (Deep)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Basics & Thread Lifecycle</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="con1"> Process vs Thread</label></li>
+              <li><label><input type="checkbox" data-id="con2"> Thread lifecycle states</label></li>
+              <li><label><input type="checkbox" data-id="con3"> Runnable vs Callable vs Thread</label></li>
+              <li><label><input type="checkbox" data-id="con4"> synchronized — method vs block, intrinsic locks, reentrancy</label></li>
+              <li><label><input type="checkbox" data-id="con5"> wait(), notify(), notifyAll() — producer-consumer classic</label></li>
+              <li><label><input type="checkbox" data-id="con6"> Thread interruption — interrupt(), interrupted(), isInterrupted()</label></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>Java Memory Model & Visibility</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="con7"> Java Memory Model (JMM) — happens-before relationship</label> <span class="hard">Very Hard</span></li>
+              <li><label><input type="checkbox" data-id="con8"> volatile — visibility + ordering, not atomicity</label></li>
+              <li><label><input type="checkbox" data-id="con9"> Race conditions, data races</label></li>
+              <li><label><input type="checkbox" data-id="con10"> Double-checked locking & volatile</label></li>
+              <li><label><input type="checkbox" data-id="con11"> Happens-before rules (program order, monitor lock, volatile, thread start/join, etc.)</label></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>Locks & Synchronizers</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="con12"> ReentrantLock — fair vs non-fair, tryLock, lockInterruptibly</label></li>
+              <li><label><input type="checkbox" data-id="con13"> ReadWriteLock / StampedLock</label></li>
+              <li><label><input type="checkbox" data-id="con14"> Condition objects</label></li>
+              <li><label><input type="checkbox" data-id="con15"> CountDownLatch, CyclicBarrier, Phaser, Semaphore, Exchanger</label></li>
+              <li><label><input type="checkbox" data-id="con16"> Atomic classes — AtomicInteger, AtomicReference, Atomic*FieldUpdater, LongAdder</label></li>
+              <li><label><input type="checkbox" data-id="con17"> CAS (Compare-And-Swap) — ABA problem</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="con18"> ThreadLocal — memory leaks with thread pools</label> <span class="hard">Classic Trap</span></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>Executor Framework & Advanced</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="con19"> ExecutorService, ThreadPoolExecutor internals — corePoolSize, maxPoolSize, queue, rejection policies</label> <span class="hard">Must Know</span></li>
+              <li><label><input type="checkbox" data-id="con20"> Thread pool sizing — CPU-bound vs I/O-bound heuristics</label></li>
+              <li><label><input type="checkbox" data-id="con21"> ScheduledExecutorService</label></li>
+              <li><label><input type="checkbox" data-id="con22"> Future, FutureTask, CompletableFuture deep dive (thenCompose, thenCombine, exceptionally, handle, whenComplete)</label></li>
+              <li><label><input type="checkbox" data-id="con23"> ForkJoinPool — work-stealing algorithm, RecursiveTask/RecursiveAction</label></li>
+              <li><label><input type="checkbox" data-id="con24"> Parallel Streams under the hood</label></li>
+              <li><label><input type="checkbox" data-id="con25"> Deadlock, Livelock, Starvation — detection & prevention</label></li>
+              <li><label><input type="checkbox" data-id="con26"> Common concurrency bugs & how to debug them</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 8. LOOM ==================== -->
+      <section id="loom" class="topic-section">
+        <h2><span class="num">08</span> Virtual Threads & Project Loom</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Virtual Threads (Java 21+)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="l1"> Platform threads vs Virtual threads</label></li>
+              <li><label><input type="checkbox" data-id="l2"> How virtual threads work — carrier threads, mounting/unmounting</label></li>
+              <li><label><input type="checkbox" data-id="l3"> Creating virtual threads — Thread.ofVirtual(), Executors.newVirtualThreadPerTaskExecutor()</label></li>
+              <li><label><input type="checkbox" data-id="l4"> Pinning — synchronized blocks & native frames cause pinning</label> <span class="hard">Critical</span></li>
+              <li><label><input type="checkbox" data-id="l5"> -Djdk.tracePinnedThreads=full</label></li>
+              <li><label><input type="checkbox" data-id="l6"> When virtual threads help (I/O bound) vs don't (CPU bound)</label></li>
+              <li><label><input type="checkbox" data-id="l7"> ThreadLocal issues with millions of virtual threads → ScopedValue</label></li>
+              <li><label><input type="checkbox" data-id="l8"> Spring Boot integration — spring.threads.virtual.enabled</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Structured Concurrency</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="l9"> StructuredTaskScope — ShutdownOnFailure, ShutdownOnSuccess</label></li>
+              <li><label><input type="checkbox" data-id="l10"> fork → join → throwIfFailed lifecycle</label></li>
+              <li><label><input type="checkbox" data-id="l11"> Why structured concurrency improves cancellation & observability</label></li>
+              <li><label><input type="checkbox" data-id="l12"> ScopedValue as structured replacement for ThreadLocal</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 9. JVM ==================== -->
+      <section id="jvm" class="topic-section">
+        <h2><span class="num">09</span> JVM Internals, GC & Performance</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>JVM Architecture</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="j1"> Class Loader subsystem — Bootstrap, Extension/Platform, Application, custom loaders</label></li>
+              <li><label><input type="checkbox" data-id="j2"> Class loading phases — Loading, Linking (verify, prepare, resolve), Initialization</label></li>
+              <li><label><input type="checkbox" data-id="j3"> Runtime Data Areas — Method Area / Metaspace, Heap, Stack, PC Register, Native Method Stack</label></li>
+              <li><label><input type="checkbox" data-id="j4"> Execution Engine — Interpreter, JIT Compiler (C1/C2), GC</label></li>
+              <li><label><input type="checkbox" data-id="j5"> JIT compilation — tiered compilation, hot methods, deoptimization</label></li>
+              <li><label><input type="checkbox" data-id="j6"> Native Method Interface (JNI) basics</label></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>Memory & Garbage Collection</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="j7"> Heap structure — Young (Eden + Survivor), Old/Tenured, Metaspace</label></li>
+              <li><label><input type="checkbox" data-id="j8"> Object allocation — TLAB, escape analysis, scalar replacement</label></li>
+              <li><label><input type="checkbox" data-id="j9"> GC Algorithms — Serial, Parallel, CMS (deprecated), G1, ZGC, Shenandoah</label> <span class="hard">Must Know</span></li>
+              <li><label><input type="checkbox" data-id="j10"> G1 GC internals — regions, remembered sets, concurrent marking</label></li>
+              <li><label><input type="checkbox" data-id="j11"> ZGC / Shenandoah — low-latency, colored pointers / Brooks pointers</label></li>
+              <li><label><input type="checkbox" data-id="j12"> GC tuning flags — -Xms, -Xmx, -XX:+UseG1GC, -XX:MaxGCPauseMillis, etc.</label></li>
+              <li><label><input type="checkbox" data-id="j13"> OutOfMemoryError types — Heap, Metaspace, Stack, Direct buffer, GC overhead</label></li>
+              <li><label><input type="checkbox" data-id="j14"> Memory leaks in Java — common causes (listeners, caches, ThreadLocal, classloaders)</label></li>
+              <li><label><input type="checkbox" data-id="j15"> Soft, Weak, Phantom references</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Profiling & Diagnostics</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="j16"> jvisualvm, jconsole, Java Flight Recorder (JFR), async-profiler</label></li>
+              <li><label><input type="checkbox" data-id="j17"> jstack, jmap, jcmd, jstat</label></li>
+              <li><label><input type="checkbox" data-id="j18"> Heap dumps analysis (Eclipse MAT, VisualVM)</label></li>
+              <li><label><input type="checkbox" data-id="j19"> GraalVM — AOT, native images, startup & memory benefits</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 10. DESIGN PATTERNS ==================== -->
+      <section id="patterns" class="topic-section">
+        <h2><span class="num">10</span> Design Patterns & Architecture</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Creational</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="p1"> Singleton — eager, lazy, double-checked, enum, Bill Pugh, thread-safety issues</label> <span class="hard">Classic</span></li>
+              <li><label><input type="checkbox" data-id="p2"> Factory Method & Abstract Factory</label></li>
+              <li><label><input type="checkbox" data-id="p3"> Builder (and telescoping constructor problem)</label></li>
+              <li><label><input type="checkbox" data-id="p4"> Prototype</label></li>
+              <li><label><input type="checkbox" data-id="p5"> Object Pool</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Structural</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="p6"> Adapter, Bridge, Composite</label></li>
+              <li><label><input type="checkbox" data-id="p7"> Decorator (heavily used in Java I/O & Spring)</label></li>
+              <li><label><input type="checkbox" data-id="p8"> Facade, Flyweight, Proxy (static, dynamic, JDK vs CGLIB)</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Behavioral</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="p9"> Strategy, Observer, Command, Template Method</label></li>
+              <li><label><input type="checkbox" data-id="p10"> Chain of Responsibility, State, Mediator, Memento, Visitor, Iterator</label></li>
+              <li><label><input type="checkbox" data-id="p11"> Interpreter</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Architecture Styles & Modern Patterns</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="p12"> Layered, Hexagonal (Ports & Adapters), Clean Architecture</label></li>
+              <li><label><input type="checkbox" data-id="p13"> Domain-Driven Design basics — Aggregates, Entities, Value Objects, Bounded Contexts, Ubiquitous Language</label></li>
+              <li><label><input type="checkbox" data-id="p14"> CQRS & Event Sourcing</label></li>
+              <li><label><input type="checkbox" data-id="p15"> Saga pattern (choreography vs orchestration)</label></li>
+              <li><label><input type="checkbox" data-id="p16"> Outbox pattern, Inbox pattern</label></li>
+              <li><label><input type="checkbox" data-id="p17"> Circuit Breaker, Bulkhead, Retry, Timeout, Fallback</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 11. DSA ==================== -->
+      <section id="dsa" class="topic-section">
+        <h2><span class="num">11</span> Data Structures & Algorithms (Product Company Focus)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Must-Know Structures & Algorithms</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="d1"> Arrays & Strings — two pointers, sliding window, prefix sums</label></li>
+              <li><label><input type="checkbox" data-id="d2"> Linked Lists — reverse, cycle detection, merge, LRU design</label></li>
+              <li><label><input type="checkbox" data-id="d3"> Stacks & Queues — monotonic stack, next greater element</label></li>
+              <li><label><input type="checkbox" data-id="d4"> Trees — Binary Tree, BST, Trie, Segment Tree, Fenwick (basics)</label></li>
+              <li><label><input type="checkbox" data-id="d5"> Heaps / Priority Queues — top-K, median finding</label></li>
+              <li><label><input type="checkbox" data-id="d6"> Graphs — BFS, DFS, Dijkstra, Topological sort, Union-Find</label></li>
+              <li><label><input type="checkbox" data-id="d7"> Hashing — custom designs, collision strategies</label></li>
+              <li><label><input type="checkbox" data-id="d8"> Sorting — merge, quick, counting, radix (when to use)</label></li>
+              <li><label><input type="checkbox" data-id="d9"> Searching — binary search variants (lower/upper bound)</label></li>
+              <li><label><input type="checkbox" data-id="d10"> Dynamic Programming — classic patterns (knapsack, LCS, LIS, grid paths)</label></li>
+              <li><label><input type="checkbox" data-id="d11"> Recursion & Backtracking</label></li>
+              <li><label><input type="checkbox" data-id="d12"> Greedy algorithms</label></li>
+              <li><label><input type="checkbox" data-id="d13"> Bit manipulation</label></li>
+              <li><label><input type="checkbox" data-id="d14"> Complexity analysis — time/space, amortized</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>System Design Friendly DS</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="d15"> Designing LRU / LFU Cache</label></li>
+              <li><label><input type="checkbox" data-id="d16"> Designing Rate Limiter</label></li>
+              <li><label><input type="checkbox" data-id="d17"> Designing Key-Value Store (simplified)</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 12. SPRING CORE ==================== -->
+      <section id="spring-core" class="topic-section">
+        <h2><span class="num">12</span> Spring Core & AOP</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>IoC & Dependency Injection</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sc1"> Inversion of Control vs Dependency Injection</label></li>
+              <li><label><input type="checkbox" data-id="sc2"> BeanFactory vs ApplicationContext</label></li>
+              <li><label><input type="checkbox" data-id="sc3"> Bean lifecycle — Instantiation → Populate → Aware interfaces → BeanPostProcessor → @PostConstruct → Ready → @PreDestroy</label> <span class="hard">Must Know</span></li>
+              <li><label><input type="checkbox" data-id="sc4"> Bean scopes — singleton, prototype, request, session, application, websocket</label></li>
+              <li><label><input type="checkbox" data-id="sc5"> Constructor vs Setter vs Field injection — why constructor is preferred</label></li>
+              <li><label><input type="checkbox" data-id="sc6"> @Autowired, @Qualifier, @Primary, @Resource, @Inject</label></li>
+              <li><label><input type="checkbox" data-id="sc7"> Circular dependencies — how Spring handles (and when it fails)</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="sc8"> @Component, @Service, @Repository, @Controller stereotype annotations</label></li>
+              <li><label><input type="checkbox" data-id="sc9"> @Configuration, @Bean, @ComponentScan, @Import</label></li>
+              <li><label><input type="checkbox" data-id="sc10"> Conditional beans — @Conditional, @ConditionalOn*</label></li>
+              <li><label><input type="checkbox" data-id="sc11"> Environment, PropertySources, @Value, @ConfigurationProperties</label></li>
+              <li><label><input type="checkbox" data-id="sc12"> Profiles — @Profile, spring.profiles.active</label></li>
+              <li><label><input type="checkbox" data-id="sc13"> Spring Events — ApplicationEventPublisher, @EventListener, @Async events</label></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>AOP</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sc14"> Aspect, Advice, Pointcut, Join Point, Weaving</label></li>
+              <li><label><input type="checkbox" data-id="sc15"> @Aspect, @Before, @After, @AfterReturning, @AfterThrowing, @Around</label></li>
+              <li><label><input type="checkbox" data-id="sc16"> Pointcut expressions — execution, within, args, @annotation, bean</label></li>
+              <li><label><input type="checkbox" data-id="sc17"> Proxy types — JDK dynamic proxy vs CGLIB</label></li>
+              <li><label><input type="checkbox" data-id="sc18"> Self-invocation problem (proxy bypass)</label> <span class="hard">Classic Trap</span></li>
+              <li><label><input type="checkbox" data-id="sc19"> Order of aspects (@Order)</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Transactions</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sc20"> @Transactional — propagation (REQUIRED, REQUIRES_NEW, NESTED, etc.)</label> <span class="hard">Very Important</span></li>
+              <li><label><input type="checkbox" data-id="sc21"> Isolation levels — READ_UNCOMMITTED → SERIALIZABLE</label></li>
+              <li><label><input type="checkbox" data-id="sc22"> Rollback rules — rollbackFor, noRollbackFor</label></li>
+              <li><label><input type="checkbox" data-id="sc23"> Proxy-based transaction management limitations</label></li>
+              <li><label><input type="checkbox" data-id="sc24"> Programmatic transactions (TransactionTemplate)</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 13. SPRING BOOT ==================== -->
+      <section id="spring-boot" class="topic-section">
+        <h2><span class="num">13</span> Spring Boot</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Core Concepts</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sb1"> Auto-configuration — how it works (spring.factories / AutoConfiguration.imports)</label> <span class="hard">Key</span></li>
+              <li><label><input type="checkbox" data-id="sb2"> @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan</label></li>
+              <li><label><input type="checkbox" data-id="sb3"> Starters — spring-boot-starter-web, data-jpa, security, test, etc.</label></li>
+              <li><label><input type="checkbox" data-id="sb4"> application.properties / application.yml — hierarchical, profiles</label></li>
+              <li><label><input type="checkbox" data-id="sb5"> Externalized configuration — command line, env vars, config server</label></li>
+              <li><label><input type="checkbox" data-id="sb6"> @ConfigurationProperties — type-safe config, validation</label></li>
+              <li><label><input type="checkbox" data-id="sb7"> Embedded servers — Tomcat, Jetty, Undertow, Netty (WebFlux)</label></li>
+              <li><label><input type="checkbox" data-id="sb8"> Actuator — health, metrics, info, custom endpoints, security</label></li>
+              <li><label><input type="checkbox" data-id="sb9"> DevTools, LiveReload</label></li>
+              <li><label><input type="checkbox" data-id="sb10"> Logging configuration (Logback defaults)</label></li>
+              <li><label><input type="checkbox" data-id="sb11"> Fat JAR / executable JAR, layers</label></li>
+              <li><label><input type="checkbox" data-id="sb12"> Spring Boot 3.x changes — Jakarta EE, AOT, Native Image support</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 14. SPRING DATA ==================== -->
+      <section id="spring-data" class="topic-section">
+        <h2><span class="num">14</span> Spring Data / JPA / Hibernate</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>JPA & Hibernate Internals</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sd1"> Entity lifecycle — Transient, Managed, Detached, Removed</label></li>
+              <li><label><input type="checkbox" data-id="sd2"> @Entity, @Id, @GeneratedValue strategies</label></li>
+              <li><label><input type="checkbox" data-id="sd3"> Relationships — @OneToOne, @OneToMany, @ManyToOne, @ManyToMany + cascade & orphanRemoval</label></li>
+              <li><label><input type="checkbox" data-id="sd4"> FetchType.LAZY vs EAGER — N+1 problem & solutions (JOIN FETCH, EntityGraph, batch size)</label> <span class="hard">Must Know</span></li>
+              <li><label><input type="checkbox" data-id="sd5"> JPQL, Criteria API, Native queries</label></li>
+              <li><label><input type="checkbox" data-id="sd6"> First-level cache (Session/PersistenceContext) vs Second-level cache</label></li>
+              <li><label><input type="checkbox" data-id="sd7"> Dirty checking, Flush modes</label></li>
+              <li><label><input type="checkbox" data-id="sd8"> Optimistic locking (@Version) vs Pessimistic locking</label></li>
+              <li><label><input type="checkbox" data-id="sd9"> Inheritance strategies — SINGLE_TABLE, JOINED, TABLE_PER_CLASS</label></li>
+              <li><label><input type="checkbox" data-id="sd10"> @Embeddable, @Embedded, @ElementCollection</label></li>
+              <li><label><input type="checkbox" data-id="sd11"> Spring Data JPA — Repository interfaces, derived queries, @Query, Specifications, QueryDSL</label></li>
+              <li><label><input type="checkbox" data-id="sd12"> Pagination & Sorting</label></li>
+              <li><label><input type="checkbox" data-id="sd13"> Auditing — @CreatedDate, @LastModifiedDate, AuditorAware</label></li>
+              <li><label><input type="checkbox" data-id="sd14"> Transactions with JPA — Open Session in View anti-pattern</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Other Spring Data</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sd15"> Spring Data Redis</label></li>
+              <li><label><input type="checkbox" data-id="sd16"> Spring Data MongoDB</label></li>
+              <li><label><input type="checkbox" data-id="sd17"> Spring Data JDBC (lighter alternative)</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 15. SPRING SECURITY ==================== -->
+      <section id="spring-security" class="topic-section">
+        <h2><span class="num">15</span> Spring Security</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Core Security Concepts</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="ss1"> Authentication vs Authorization</label></li>
+              <li><label><input type="checkbox" data-id="ss2"> SecurityFilterChain (Spring Security 5.7+ / 6.x style)</label></li>
+              <li><label><input type="checkbox" data-id="ss3"> UserDetailsService, UserDetails, PasswordEncoder</label></li>
+              <li><label><input type="checkbox" data-id="ss4"> Form login, HTTP Basic, JWT-based authentication</label></li>
+              <li><label><input type="checkbox" data-id="ss5"> JWT — structure, signing (HS256/RS256), validation, refresh tokens</label></li>
+              <li><label><input type="checkbox" data-id="ss6"> OAuth2 / OpenID Connect — Authorization Code, Client Credentials, Resource Server</label></li>
+              <li><label><input type="checkbox" data-id="ss7"> Method security — @PreAuthorize, @PostAuthorize, @Secured, SpEL</label></li>
+              <li><label><input type="checkbox" data-id="ss8"> CSRF protection — when to disable (APIs), how tokens work</label></li>
+              <li><label><input type="checkbox" data-id="ss9"> CORS configuration</label></li>
+              <li><label><input type="checkbox" data-id="ss10"> Session management — concurrent sessions, fixation protection</label></li>
+              <li><label><input type="checkbox" data-id="ss11"> SecurityContext & SecurityContextHolder</label></li>
+              <li><label><input type="checkbox" data-id="ss12"> Custom filters, AuthenticationProvider, AuthenticationManager</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 16. SPRING WEB ==================== -->
+      <section id="spring-web" class="topic-section">
+        <h2><span class="num">16</span> Spring Web (MVC & WebFlux)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Spring MVC</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sw1"> DispatcherServlet request lifecycle</label></li>
+              <li><label><input type="checkbox" data-id="sw2"> @Controller, @RestController, @RequestMapping hierarchy</label></li>
+              <li><label><input type="checkbox" data-id="sw3"> @RequestBody, @ResponseBody, HttpMessageConverters (Jackson)</label></li>
+              <li><label><input type="checkbox" data-id="sw4"> Validation — @Valid, @Validated, ConstraintViolation, custom validators</label></li>
+              <li><label><input type="checkbox" data-id="sw5"> Exception handling — @ControllerAdvice, @ExceptionHandler, ProblemDetail (RFC 7807)</label></li>
+              <li><label><input type="checkbox" data-id="sw6"> Interceptors vs Filters</label></li>
+              <li><label><input type="checkbox" data-id="sw7"> Content negotiation, versioning strategies</label></li>
+              <li><label><input type="checkbox" data-id="sw8"> File upload / download</label></li>
+              <li><label><input type="checkbox" data-id="sw9"> Async request handling (Callable, DeferredResult, WebAsyncTask)</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Reactive (WebFlux)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sw10"> Reactive Streams — Publisher, Subscriber, Subscription, Processor</label></li>
+              <li><label><input type="checkbox" data-id="sw11"> Project Reactor — Mono, Flux, operators, backpressure</label></li>
+              <li><label><input type="checkbox" data-id="sw12"> WebFlux vs MVC — when to choose which</label></li>
+              <li><label><input type="checkbox" data-id="sw13"> Functional endpoints (RouterFunction) vs Annotated</label></li>
+              <li><label><input type="checkbox" data-id="sw14"> WebClient (reactive HTTP client)</label></li>
+              <li><label><input type="checkbox" data-id="sw15"> Error handling in reactive chains</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 17. MICROSERVICES ==================== -->
+      <section id="microservices" class="topic-section">
+        <h2><span class="num">17</span> Microservices & Spring Cloud</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Architecture & Patterns</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="ms1"> Monolith vs Microservices — trade-offs</label></li>
+              <li><label><input type="checkbox" data-id="ms2"> Service Discovery — Eureka, Consul, Kubernetes DNS</label></li>
+              <li><label><input type="checkbox" data-id="ms3"> API Gateway — Spring Cloud Gateway, routing, filters, rate limiting</label></li>
+              <li><label><input type="checkbox" data-id="ms4"> Config management — Spring Cloud Config, Kubernetes ConfigMaps/Secrets</label></li>
+              <li><label><input type="checkbox" data-id="ms5"> Client-side load balancing — Spring Cloud LoadBalancer</label></li>
+              <li><label><input type="checkbox" data-id="ms6"> Circuit Breaker — Resilience4j (or older Hystrix)</label></li>
+              <li><label><input type="checkbox" data-id="ms7"> Distributed tracing — Sleuth → Micrometer Tracing + Zipkin/Jaeger</label></li>
+              <li><label><input type="checkbox" data-id="ms8"> Inter-service communication — RestTemplate → WebClient / OpenFeign</label></li>
+              <li><label><input type="checkbox" data-id="ms9"> Service mesh basics (Istio, Linkerd) — understanding the concept</label></li>
+              <li><label><input type="checkbox" data-id="ms10"> Saga, CQRS, Event-Driven microservices</label></li>
+              <li><label><input type="checkbox" data-id="ms11"> Distributed transactions challenges (2PC vs Saga)</label></li>
+              <li><label><input type="checkbox" data-id="ms12"> Idempotency, eventual consistency</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 18. MESSAGING ==================== -->
+      <section id="messaging" class="topic-section">
+        <h2><span class="num">18</span> Messaging (Kafka, RabbitMQ, etc.)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Apache Kafka (Heavily Asked)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="msg1"> Core concepts — Topics, Partitions, Offsets, Brokers, Consumer Groups</label></li>
+              <li><label><input type="checkbox" data-id="msg2"> Producers — acks, batching, compression, idempotent producer, transactions</label></li>
+              <li><label><input type="checkbox" data-id="msg3"> Consumers — poll loop, offset commit strategies, rebalancing</label></li>
+              <li><label><input type="checkbox" data-id="msg4"> Exactly-once semantics</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="msg5"> Schema Registry + Avro / Protobuf</label></li>
+              <li><label><input type="checkbox" data-id="msg6"> Kafka Streams vs Kafka Consumer</label></li>
+              <li><label><input type="checkbox" data-id="msg7"> Dead Letter Topics / error handling</label></li>
+              <li><label><input type="checkbox" data-id="msg8"> Spring Kafka — @KafkaListener, KafkaTemplate, ConcurrentKafkaListenerContainerFactory</label></li>
+              <li><label><input type="checkbox" data-id="msg9"> Kafka vs RabbitMQ — when to choose which</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Other Messaging</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="msg10"> RabbitMQ — exchanges, queues, bindings, routing keys</label></li>
+              <li><label><input type="checkbox" data-id="msg11"> JMS basics</label></li>
+              <li><label><input type="checkbox" data-id="msg12"> Spring AMQP / Spring Kafka integration patterns</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 19. DATABASES ==================== -->
+      <section id="databases" class="topic-section">
+        <h2><span class="num">19</span> Databases (SQL + NoSQL)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Relational (PostgreSQL / MySQL focus)</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="db1"> Advanced SQL — joins, subqueries, window functions, CTEs, recursive CTEs</label></li>
+              <li><label><input type="checkbox" data-id="db2"> Indexing — B-tree, Hash, GIN, GiST, composite, covering, partial indexes</label></li>
+              <li><label><input type="checkbox" data-id="db3"> Query optimization — EXPLAIN / EXPLAIN ANALYZE, sequential vs index scan</label></li>
+              <li><label><input type="checkbox" data-id="db4"> Transactions & Isolation levels deep dive</label></li>
+              <li><label><input type="checkbox" data-id="db5"> Locking — row-level, table-level, advisory locks</label></li>
+              <li><label><input type="checkbox" data-id="db6"> Normalization vs Denormalization trade-offs</label></li>
+              <li><label><input type="checkbox" data-id="db7"> Connection pooling — HikariCP internals</label></li>
+              <li><label><input type="checkbox" data-id="db8"> Database migrations — Flyway / Liquibase</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>NoSQL</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="db9"> MongoDB — documents, collections, aggregation pipeline, indexes</label></li>
+              <li><label><input type="checkbox" data-id="db10"> Redis — data structures (String, Hash, List, Set, Sorted Set, Streams), TTL, pub/sub</label></li>
+              <li><label><input type="checkbox" data-id="db11"> Cassandra / DynamoDB basics (when partition keys matter)</label></li>
+              <li><label><input type="checkbox" data-id="db12"> When to choose SQL vs NoSQL</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 20. CACHING ==================== -->
+      <section id="caching" class="topic-section">
+        <h2><span class="num">20</span> Caching Strategies</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Caching Deep Dive</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="ca1"> Cache-aside, Read-through, Write-through, Write-behind, Refresh-ahead</label></li>
+              <li><label><input type="checkbox" data-id="ca2"> Cache invalidation strategies — the hard problem</label> <span class="hard">Hard</span></li>
+              <li><label><input type="checkbox" data-id="ca3"> Spring Cache abstraction — @Cacheable, @CacheEvict, @CachePut, @Caching</label></li>
+              <li><label><input type="checkbox" data-id="ca4"> Cache providers — Caffeine (local), Redis (distributed), Ehcache</label></li>
+              <li><label><input type="checkbox" data-id="ca5"> TTL vs TTI, eviction policies (LRU, LFU, FIFO)</label></li>
+              <li><label><input type="checkbox" data-id="ca6"> Cache stampede / thundering herd — solutions</label></li>
+              <li><label><input type="checkbox" data-id="ca7"> Distributed caching consistency challenges</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 21. TESTING ==================== -->
+      <section id="testing" class="topic-section">
+        <h2><span class="num">21</span> Testing</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Unit, Integration, Contract</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="t1"> JUnit 5 — @Test, @ParameterizedTest, @BeforeEach/@AfterEach, extensions, assertions</label></li>
+              <li><label><input type="checkbox" data-id="t2"> Mockito — @Mock, @InjectMocks, when/thenReturn, verify, ArgumentCaptor, ArgumentMatchers</label></li>
+              <li><label><input type="checkbox" data-id="t3"> @SpringBootTest, @WebMvcTest, @DataJpaTest, @JsonTest, @RestClientTest</label></li>
+              <li><label><input type="checkbox" data-id="t4"> Testcontainers — real databases, Kafka, Redis in tests</label></li>
+              <li><label><input type="checkbox" data-id="t5"> MockMvc, WebTestClient</label></li>
+              <li><label><input type="checkbox" data-id="t6"> @MockBean, @SpyBean</label></li>
+              <li><label><input type="checkbox" data-id="t7"> Contract testing — Spring Cloud Contract / Pact</label></li>
+              <li><label><input type="checkbox" data-id="t8"> Test pyramid vs honeycomb — practical advice</label></li>
+              <li><label><input type="checkbox" data-id="t9"> Mutation testing concepts (PIT)</label></li>
+              <li><label><input type="checkbox" data-id="t10"> What not to mock — over-mocking anti-pattern</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 22. SYSTEM DESIGN ==================== -->
+      <section id="system-design" class="topic-section">
+        <h2><span class="num">22</span> System Design (Critical for 4+ YoE)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Fundamentals</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sys1"> CAP theorem & PACELC</label></li>
+              <li><label><input type="checkbox" data-id="sys2"> Consistency models — strong, eventual, causal</label></li>
+              <li><label><input type="checkbox" data-id="sys3"> Scalability — vertical vs horizontal, stateless services</label></li>
+              <li><label><input type="checkbox" data-id="sys4"> Availability, Latency, Throughput trade-offs</label></li>
+              <li><label><input type="checkbox" data-id="sys5"> Load balancing algorithms</label></li>
+              <li><label><input type="checkbox" data-id="sys6"> Sharding & Partitioning strategies + hotspots</label></li>
+              <li><label><input type="checkbox" data-id="sys7"> Replication — leader-follower, multi-leader, leaderless</label></li>
+              <li><label><input type="checkbox" data-id="sys8"> Consistent hashing</label></li>
+            </ul>
+          </details>
+          <details open>
+            <summary>Common System Design Problems</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="sys9"> Design URL Shortener</label></li>
+              <li><label><input type="checkbox" data-id="sys10"> Design Rate Limiter</label></li>
+              <li><label><input type="checkbox" data-id="sys11"> Design Notification System</label></li>
+              <li><label><input type="checkbox" data-id="sys12"> Design Chat / Messaging System</label></li>
+              <li><label><input type="checkbox" data-id="sys13"> Design News Feed / Timeline</label></li>
+              <li><label><input type="checkbox" data-id="sys14"> Design Search Autocomplete</label></li>
+              <li><label><input type="checkbox" data-id="sys15"> Design Distributed Cache</label></li>
+              <li><label><input type="checkbox" data-id="sys16"> Design Payment / Order System (with Saga)</label></li>
+              <li><label><input type="checkbox" data-id="sys17"> Design Ticket Booking (like BookMyShow) — concurrency control</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 23. RESILIENCE ==================== -->
+      <section id="resilience" class="topic-section">
+        <h2><span class="num">23</span> Resilience & Observability</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Resilience Patterns</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="r1"> Circuit Breaker (Resilience4j)</label></li>
+              <li><label><input type="checkbox" data-id="r2"> Retry with exponential backoff + jitter</label></li>
+              <li><label><input type="checkbox" data-id="r3"> Bulkhead / Isolation</label></li>
+              <li><label><input type="checkbox" data-id="r4"> Timeout & Fallback</label></li>
+              <li><label><input type="checkbox" data-id="r5"> Rate limiting / Throttling</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Observability</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="r6"> Logging — SLF4J + Logback, structured logging (JSON), MDC for correlation IDs</label></li>
+              <li><label><input type="checkbox" data-id="r7"> Metrics — Micrometer + Prometheus + Grafana</label></li>
+              <li><label><input type="checkbox" data-id="r8"> Distributed Tracing — Micrometer Tracing / OpenTelemetry</label></li>
+              <li><label><input type="checkbox" data-id="r9"> Health checks & readiness/liveness probes</label></li>
+              <li><label><input type="checkbox" data-id="r10"> Alerting strategies</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 24. DEVOPS ==================== -->
+      <section id="devops" class="topic-section">
+        <h2><span class="num">24</span> Build Tools, Containers, CI/CD</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Build & Dependency Management</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="dev1"> Maven — pom.xml, lifecycle, profiles, multi-module, dependency management</label></li>
+              <li><label><input type="checkbox" data-id="dev2"> Gradle — Groovy/Kotlin DSL, task graph, incremental builds</label></li>
+              <li><label><input type="checkbox" data-id="dev3"> Dependency conflicts & resolution strategies</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Containers & Orchestration</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="dev4"> Docker — Dockerfile best practices for Java (multi-stage, layers, jlink, GraalVM native)</label></li>
+              <li><label><input type="checkbox" data-id="dev5"> Docker Compose</label></li>
+              <li><label><input type="checkbox" data-id="dev6"> Kubernetes basics — Pods, Deployments, Services, ConfigMaps, Secrets, Ingress, HPA</label></li>
+              <li><label><input type="checkbox" data-id="dev7"> Java apps on K8s — memory limits, probes, JVM flags in containers</label></li>
+            </ul>
+          </details>
+          <details>
+            <summary>CI/CD</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="dev8"> Jenkins / GitHub Actions / GitLab CI pipelines</label></li>
+              <li><label><input type="checkbox" data-id="dev9"> Blue-Green, Canary, Rolling deployments</label></li>
+              <li><label><input type="checkbox" data-id="dev10"> Artifact repositories (Nexus / Artifactory)</label></li>
+              <li><label><input type="checkbox" data-id="dev11"> Static analysis (SonarQube), quality gates</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 25. CLOUD ==================== -->
+      <section id="cloud" class="topic-section">
+        <h2><span class="num">25</span> Cloud Fundamentals (AWS focus)</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>Key AWS Services for Java Backends</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="cl1"> EC2, Security Groups, IAM roles & policies</label></li>
+              <li><label><input type="checkbox" data-id="cl2"> S3 — buckets, lifecycle, presigned URLs</label></li>
+              <li><label><input type="checkbox" data-id="cl3"> RDS / Aurora — multi-AZ, read replicas</label></li>
+              <li><label><input type="checkbox" data-id="cl4"> ElastiCache (Redis/Memcached)</label></li>
+              <li><label><input type="checkbox" data-id="cl5"> SQS, SNS, EventBridge</label></li>
+              <li><label><input type="checkbox" data-id="cl6"> Lambda + API Gateway (serverless Java considerations — cold starts)</label></li>
+              <li><label><input type="checkbox" data-id="cl7"> ECS / EKS / Fargate</label></li>
+              <li><label><input type="checkbox" data-id="cl8"> CloudWatch, X-Ray</label></li>
+              <li><label><input type="checkbox" data-id="cl9"> AWS SDK for Java v2</label></li>
+              <li><label><input type="checkbox" data-id="cl10"> Spring Cloud AWS</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- ==================== 26. HARD INTERVIEW TOPICS ==================== -->
+      <section id="interview" class="topic-section">
+        <h2><span class="num">26</span> Frequently Asked Hard / Confusing Topics</h2>
+        <div class="topic-group">
+          <details open>
+            <summary>High-Frequency Traps & Deep Questions</summary>
+            <ul class="topic-list">
+              <li><label><input type="checkbox" data-id="h1"> How does HashMap work internally? (full explanation with treeification)</label></li>
+              <li><label><input type="checkbox" data-id="h2"> ConcurrentHashMap — how does it achieve thread safety without locking the whole map?</label></li>
+              <li><label><input type="checkbox" data-id="h3"> Explain the Java Memory Model and happens-before</label></li>
+              <li><label><input type="checkbox" data-id="h4"> Difference between synchronized and ReentrantLock</label></li>
+              <li><label><input type="checkbox" data-id="h5"> How does GC decide which objects to collect? (reachability)</label></li>
+              <li><label><input type="checkbox" data-id="h6"> What happens when you call Thread.start() twice?</label></li>
+              <li><label><input type="checkbox" data-id="h7"> Why is String immutable? Benefits and implementation</label></li>
+              <li><label><input type="checkbox" data-id="h8"> Explain Spring Bean lifecycle in detail</label></li>
+              <li><label><input type="checkbox" data-id="h9"> @Transactional propagation and isolation — real scenarios</label></li>
+              <li><label><input type="checkbox" data-id="h10"> How does Spring solve circular dependencies?</label></li>
+              <li><label><input type="checkbox" data-id="h11"> N+1 select problem and all solutions</label></li>
+              <li><label><input type="checkbox" data-id="h12"> Virtual thread pinning — what causes it and how to avoid</label></li>
+              <li><label><input type="checkbox" data-id="h13"> How does CompletableFuture work under the hood?</label></li>
+              <li><label><input type="checkbox" data-id="h14"> Design an LRU Cache (code + concurrency)</label></li>
+              <li><label><input type="checkbox" data-id="h15"> Exactly-once delivery in Kafka — is it possible?</label></li>
+              <li><label><input type="checkbox" data-id="h16"> CAP theorem applied to real systems (Cassandra, Mongo, Postgres)</label></li>
+              <li><label><input type="checkbox" data-id="h17"> How would you debug a memory leak in production?</label></li>
+              <li><label><input type="checkbox" data-id="h18"> Self-invocation problem in Spring AOP / Transactions</label></li>
+              <li><label><input type="checkbox" data-id="h19"> Difference between WebFlux and Virtual Threads approach</label></li>
+              <li><label><input type="checkbox" data-id="h20"> How does ClassLoader hierarchy work and why do we get ClassNotFoundException / NoClassDefFoundError differently?</label></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="outro">
+        <h2>Final Advice for 4+ YoE Product Interviews</h2>
+        <ul>
+          <li>Be ready to go deep on <strong>any</strong> topic you list on your resume.</li>
+          <li>Prefer explaining trade-offs over memorizing definitions.</li>
+          <li>Write clean code on the spot — practice on a whiteboard or simple editor.</li>
+          <li>System Design + Deep Java (Concurrency/JVM/Collections) + Spring internals is the winning combination.</li>
+          <li>Keep a personal notes repo with code snippets and diagrams for each hard topic.</li>
+        </ul>
+        <p class="footer-note">This roadmap is intentionally exhaustive. You do not need to master every single subtopic to the same depth, but awareness of the full landscape helps you answer follow-up questions confidently.</p>
+        <p class="footer-note">Progress is stored locally in your browser. Happy preparation! 🚀</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
