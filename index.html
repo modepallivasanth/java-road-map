@@ -23,6 +23,20 @@
     </div>
   </header>
 
+
+  <div class="category-tabs-container">
+    <div class="category-tabs">
+      <button class="category-tab active" data-target="all">All Topics</button>
+      <button class="category-tab" data-target="core">Core Java & Fundamentals</button>
+      <button class="category-tab" data-target="concurrency">Concurrency & JVM</button>
+      <button class="category-tab" data-target="spring">Spring Ecosystem</button>
+      <button class="category-tab" data-target="architecture">Architecture & System Design</button>
+      <button class="category-tab" data-target="databases">Databases, DevOps & Testing</button>
+      <button class="category-tab" data-target="interview">Interview Questions</button>
+    </div>
+  </div>
+
+
   <main>
     <!-- Hero -->
     <section class="hero">
@@ -41,7 +55,7 @@
     <div id="noResults" class="no-results">No topics match your search.</div>
 
     <!-- ==================== 01. CORE JAVA ==================== -->
-    <section class="topic-section" id="core-java">
+    <section class="topic-section" id="core-java" data-category="core">
       <div class="section-header">
         <span class="section-num">01</span>
         <h2>Core Java Deep Dive</h2>
@@ -85,7 +99,7 @@
     </section>
 
     <!-- ==================== 02. OOP ==================== -->
-    <section class="topic-section" id="oop">
+    <section class="topic-section" id="oop" data-category="core">
       <div class="section-header">
         <span class="section-num">02</span>
         <h2>OOP Deep Dive &amp; SOLID</h2>
@@ -118,7 +132,7 @@
     </section>
 
     <!-- ==================== 03. COLLECTIONS ==================== -->
-    <section class="topic-section" id="collections">
+    <section class="topic-section" id="collections" data-category="core">
       <div class="section-header">
         <span class="section-num">03</span>
         <h2>Collections Framework Internals</h2>
@@ -163,7 +177,7 @@
     </section>
 
     <!-- ==================== 04. GENERICS ==================== -->
-    <section class="topic-section" id="generics">
+    <section class="topic-section" id="generics" data-category="core">
       <div class="section-header">
         <span class="section-num">04</span>
         <h2>Generics &amp; Type System</h2>
@@ -184,7 +198,7 @@
     </section>
 
     <!-- ==================== 05. EXCEPTIONS ==================== -->
-    <section class="topic-section" id="exceptions">
+    <section class="topic-section" id="exceptions" data-category="core">
       <div class="section-header">
         <span class="section-num">05</span>
         <h2>Exception Handling &amp; Best Practices</h2>
@@ -206,7 +220,7 @@
     </section>
 
     <!-- ==================== 06. MODERN JAVA ==================== -->
-    <section class="topic-section" id="modern-java">
+    <section class="topic-section" id="modern-java" data-category="core">
       <div class="section-header">
         <span class="section-num">06</span>
         <h2>Modern Java (8 → 25)</h2>
@@ -269,7 +283,7 @@
     </section>
 
     <!-- ==================== 07. CONCURRENCY ==================== -->
-    <section class="topic-section" id="concurrency">
+    <section class="topic-section" id="concurrency" data-category="concurrency">
       <div class="section-header">
         <span class="section-num">07</span>
         <h2>Multithreading &amp; Concurrency</h2>
@@ -325,7 +339,7 @@
     </section>
 
     <!-- ==================== 08. LOOM ==================== -->
-    <section class="topic-section" id="loom">
+    <section class="topic-section" id="loom" data-category="concurrency">
       <div class="section-header">
         <span class="section-num">08</span>
         <h2>Virtual Threads &amp; Project Loom</h2>
@@ -355,7 +369,7 @@
     </section>
 
     <!-- ==================== 09. JVM ==================== -->
-    <section class="topic-section" id="jvm">
+    <section class="topic-section" id="jvm" data-category="concurrency">
       <div class="section-header">
         <span class="section-num">09</span>
         <h2>JVM Internals, GC &amp; Performance</h2>
@@ -400,7 +414,7 @@
     </section>
 
     <!-- ==================== 10. DESIGN PATTERNS ==================== -->
-    <section class="topic-section" id="patterns">
+    <section class="topic-section" id="patterns" data-category="architecture">
       <div class="section-header">
         <span class="section-num">10</span>
         <h2>Design Patterns &amp; Architecture</h2>
@@ -445,7 +459,7 @@
     </section>
 
     <!-- ==================== 11. DSA ==================== -->
-    <section class="topic-section" id="dsa">
+    <section class="topic-section" id="dsa" data-category="architecture">
       <div class="section-header">
         <span class="section-num">11</span>
         <h2>Data Structures &amp; Algorithms</h2>
@@ -482,7 +496,7 @@
     </section>
 
     <!-- ==================== 12. SPRING CORE ==================== -->
-    <section class="topic-section" id="spring-core">
+    <section class="topic-section" id="spring-core" data-category="spring">
       <div class="section-header">
         <span class="section-num">12</span>
         <h2>Spring Core &amp; AOP</h2>
@@ -529,7 +543,7 @@
     </section>
 
     <!-- ==================== 13. SPRING BOOT ==================== -->
-    <section class="topic-section" id="spring-boot">
+    <section class="topic-section" id="spring-boot" data-category="spring">
       <div class="section-header">
         <span class="section-num">13</span>
         <h2>Spring Boot</h2>
@@ -556,7 +570,7 @@
     </section>
 
     <!-- ==================== 14. SPRING DATA ==================== -->
-    <section class="topic-section" id="spring-data">
+    <section class="topic-section" id="spring-data" data-category="spring">
       <div class="section-header">
         <span class="section-num">14</span>
         <h2>Spring Data / JPA / Hibernate</h2>
@@ -591,7 +605,7 @@
     </section>
 
     <!-- ==================== 15. SPRING SECURITY ==================== -->
-    <section class="topic-section" id="spring-security">
+    <section class="topic-section" id="spring-security" data-category="spring">
       <div class="section-header">
         <span class="section-num">15</span>
         <h2>Spring Security &amp; Application Security</h2>
@@ -629,7 +643,7 @@
     </section>
 
     <!-- ==================== 16. SPRING WEB ==================== -->
-    <section class="topic-section" id="spring-web">
+    <section class="topic-section" id="spring-web" data-category="spring">
       <div class="section-header">
         <span class="section-num">16</span>
         <h2>Spring Web (MVC &amp; WebFlux)</h2>
@@ -662,7 +676,7 @@
     </section>
 
     <!-- ==================== 17. API DESIGN (NEW) ==================== -->
-    <section class="topic-section" id="api-design">
+    <section class="topic-section" id="api-design" data-category="architecture">
       <div class="section-header">
         <span class="section-num">17</span>
         <h2>API Design &amp; Documentation</h2>
@@ -694,7 +708,7 @@
     </section>
 
     <!-- ==================== 18. GRAPHQL & gRPC (NEW) ==================== -->
-    <section class="topic-section" id="graphql-grpc">
+    <section class="topic-section" id="graphql-grpc" data-category="architecture">
       <div class="section-header">
         <span class="section-num">18</span>
         <h2>GraphQL &amp; gRPC</h2>
@@ -724,7 +738,7 @@
     </section>
 
     <!-- ==================== 19. MICROSERVICES ==================== -->
-    <section class="topic-section" id="microservices">
+    <section class="topic-section" id="microservices" data-category="architecture">
       <div class="section-header">
         <span class="section-num">19</span>
         <h2>Microservices &amp; Spring Cloud</h2>
@@ -749,7 +763,7 @@
     </section>
 
     <!-- ==================== 20. MESSAGING ==================== -->
-    <section class="topic-section" id="messaging">
+    <section class="topic-section" id="messaging" data-category="architecture">
       <div class="section-header">
         <span class="section-num">20</span>
         <h2>Messaging (Kafka, RabbitMQ)</h2>
@@ -779,7 +793,7 @@
     </section>
 
     <!-- ==================== 21. DATABASES ==================== -->
-    <section class="topic-section" id="databases">
+    <section class="topic-section" id="databases" data-category="databases">
       <div class="section-header">
         <span class="section-num">21</span>
         <h2>Databases (SQL + NoSQL + Search)</h2>
@@ -821,7 +835,7 @@
     </section>
 
     <!-- ==================== 22. CACHING ==================== -->
-    <section class="topic-section" id="caching">
+    <section class="topic-section" id="caching" data-category="databases">
       <div class="section-header">
         <span class="section-num">22</span>
         <h2>Caching Strategies</h2>
@@ -841,7 +855,7 @@
     </section>
 
     <!-- ==================== 23. TESTING ==================== -->
-    <section class="topic-section" id="testing">
+    <section class="topic-section" id="testing" data-category="databases">
       <div class="section-header">
         <span class="section-num">23</span>
         <h2>Testing</h2>
@@ -867,7 +881,7 @@
     </section>
 
     <!-- ==================== 24. SYSTEM DESIGN ==================== -->
-    <section class="topic-section" id="system-design">
+    <section class="topic-section" id="system-design" data-category="architecture">
       <div class="section-header">
         <span class="section-num">24</span>
         <h2>System Design</h2>
@@ -906,7 +920,7 @@
     </section>
 
     <!-- ==================== 25. RESILIENCE ==================== -->
-    <section class="topic-section" id="resilience">
+    <section class="topic-section" id="resilience" data-category="architecture">
       <div class="section-header">
         <span class="section-num">25</span>
         <h2>Resilience &amp; Observability</h2>
@@ -935,7 +949,7 @@
     </section>
 
     <!-- ==================== 26. DEVOPS ==================== -->
-    <section class="topic-section" id="devops">
+    <section class="topic-section" id="devops" data-category="databases">
       <div class="section-header">
         <span class="section-num">26</span>
         <h2>Build, Docker, K8s, CI/CD</h2>
@@ -969,7 +983,7 @@
     </section>
 
     <!-- ==================== 27. CLOUD ==================== -->
-    <section class="topic-section" id="cloud">
+    <section class="topic-section" id="cloud" data-category="databases">
       <div class="section-header">
         <span class="section-num">27</span>
         <h2>Cloud Fundamentals (AWS)</h2>
@@ -992,7 +1006,7 @@
     </section>
 
     <!-- ==================== 28. INTERVIEW ==================== -->
-    <section class="topic-section" id="interview">
+    <section class="topic-section" id="interview" data-category="interview">
       <div class="section-header">
         <span class="section-num">28</span>
         <h2>Interview Deep Questions</h2>
@@ -1028,7 +1042,7 @@
     </section>
 
     <!-- ==================== 29. INTERVIEW QUESTION BANK ==================== -->
-    <section class="topic-section" id="interview-question-bank">
+    <section class="topic-section" id="interview-question-bank" data-category="interview">
       <div class="section-header">
         <span class="section-num">29</span>
         <h2>🔥 Complete Interview Question Bank (700+ Questions)</h2>

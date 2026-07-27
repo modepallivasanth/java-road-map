@@ -1,4 +1,9 @@
-(function () {
+const fs = require('fs');
+const path = require('path');
+
+const scriptPath = path.join(__dirname, 'script.js');
+
+const newScript = `(function () {
   'use strict';
 
   const THEME_KEY = 'java-roadmap-theme';
@@ -168,3 +173,7 @@
     }
   });
 })();
+`;
+
+fs.writeFileSync(scriptPath, newScript, 'utf8');
+console.log('Successfully updated script.js');
