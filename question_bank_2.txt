@@ -1,0 +1,643 @@
+1) Core Java basics and OOP
+What is Java, and what makes it platform independent?
+What is the difference between JDK, JRE, and JVM?
+How does Java achieve “write once, run anywhere”?
+What are the main features of Java?
+What is the difference between primitive types and reference types?
+What is the difference between int, Integer, and autoboxing?
+What is the default value of instance variables?
+What is the difference between local, instance, and static variables?
+What is the scope and lifetime of a variable in Java?
+What are access modifiers, and why do they matter?
+What is the difference between private, protected, package-private, and public?
+What is the difference between final, finally, and finalize()?
+What is method overloading?
+What is method overriding?
+What is the difference between overloading and overriding?
+What is polymorphism in Java?
+What is encapsulation?
+What is inheritance, and when should you avoid it?
+What is abstraction?
+What is the difference between an interface and an abstract class?
+Can a class implement multiple interfaces?
+Can a class extend more than one class?
+What is the diamond problem, and how does Java handle it?
+What is constructor overloading?
+What is the difference between a constructor and a method?
+Can a constructor be private?
+Why can’t constructors be inherited?
+What is object creation flow in Java?
+What is the order of initialization in Java?
+What is this keyword used for?
+What is super keyword used for?
+What is the difference between == and .equals()?
+Why is String immutable?
+What is string interning?
+What is the difference between String, StringBuilder, and StringBuffer?
+What is the immutable class design pattern?
+What is composition, and how is it different from inheritance?
+What is association, aggregation, and composition?
+What is the purpose of the main method?
+What happens when you run a Java class from the command line?
+2) Collections, generics, Java 8+ features
+What is the Java Collections Framework?
+What is the difference between List, Set, and Map?
+What is the difference between ArrayList and LinkedList?
+When would you choose ArrayList over LinkedList?
+What is the difference between HashSet, LinkedHashSet, and TreeSet?
+What is the difference between HashMap, LinkedHashMap, and TreeMap?
+How does HashMap work internally?
+What is a hash collision?
+What is the load factor in HashMap?
+What is rehashing?
+Why are HashMap keys typically immutable?
+What is the difference between HashMap and Hashtable?
+What is the difference between HashMap and ConcurrentHashMap?
+What is the difference between fail-fast and fail-safe iterators?
+What is the difference between Iterator and ListIterator?
+What is the Collections utility class used for?
+What is the difference between Arrays and Collections?
+What is the difference between Comparable and Comparator?
+How do you sort a collection using a custom comparator?
+What are generics, and why are they useful?
+What is type erasure?
+What is a bounded type parameter?
+What is wildcard usage in generics?
+What is the difference between ? extends T and ? super T?
+What is a generic method?
+Can you create arrays of generic types?
+What is the difference between Optional and null?
+When should Optional be used, and when should it not be used?
+What are lambda expressions?
+What is a functional interface?
+What is Predicate?
+What is Function?
+What is Consumer?
+What is Supplier?
+What is method reference syntax?
+What is the Streams API?
+What is the difference between a collection and a stream?
+What is lazy evaluation in streams?
+What is the difference between intermediate and terminal stream operations?
+How do map, flatMap, filter, and peek differ?
+What is the purpose of reduce()?
+What is collect() used for?
+What is the difference between forEach() and forEachOrdered()?
+What is a parallel stream?
+When should you avoid parallel streams?
+What is Collectors.toMap() and what can go wrong with it?
+What is the difference between groupingBy and partitioningBy?
+What is the difference between sorted() and sorting a collection in place?
+What are records in Java?
+What are sealed classes and interfaces?
+3) JVM, memory, class loading, GC, reflection, serialization
+What is the JVM architecture?
+What is the heap, and what is the stack?
+What is method area / metaspace?
+What is the difference between stack memory and heap memory?
+What objects are stored on the stack versus the heap?
+What is garbage collection?
+What is a memory leak in Java?
+What causes OutOfMemoryError?
+What causes StackOverflowError?
+What is the young generation?
+What is the old generation?
+What is the survivor space?
+What is minor GC?
+What is major GC?
+What is full GC?
+What is stop-the-world pause?
+What is the difference between Serial, Parallel, CMS, G1, ZGC, and Shenandoah at a high level?
+What is object reachability?
+What is a strong reference?
+What is a soft reference?
+What is a weak reference?
+What is a phantom reference?
+What is the class loading process?
+What are the phases of class loading?
+What is a class loader?
+What is the parent delegation model?
+What is bootstrap class loader?
+What is extension/platform class loader?
+What is application class loader?
+What is the difference between class loading and class initialization?
+What is static initialization?
+What is the use of static blocks?
+What is the difference between Class.forName() and ClassLoader.loadClass()?
+What is reflection?
+Why is reflection powerful but risky?
+What is the relationship between reflection and encapsulation?
+What is serialization?
+Why is Serializable considered weakly designed in many systems?
+What is transient?
+What is serialVersionUID?
+What happens during deserialization?
+What is the difference between serialization and cloning?
+What is shallow copy?
+What is deep copy?
+What is clone() and why is it controversial?
+What are JIT compilation and bytecode?
+What is the difference between interpretation and compilation in the JVM?
+What is escape analysis?
+What is compressed oops?
+What is the difference between JRE memory errors and database memory issues?
+4) Exceptions, I/O, date/time, annotations, records, sealed types
+What is an exception?
+What is the difference between checked and unchecked exceptions?
+When should you use checked exceptions?
+When should you use unchecked exceptions?
+What is the difference between throw and throws?
+What is exception propagation?
+What is the try-catch-finally flow?
+Can finally be skipped?
+What is try-with-resources?
+What problem does AutoCloseable solve?
+What is exception chaining?
+What is a custom exception?
+What is the difference between Error and Exception?
+Should you catch Throwable?
+What is the best way to handle exceptions in layered applications?
+What is the difference between BufferedReader and Scanner?
+What is byte stream versus character stream?
+What is NIO?
+What is Path and Files in modern Java I/O?
+What is the difference between File and Path?
+What is memory-mapped file access?
+What is buffering, and why does it matter?
+What is the java.time API?
+Why is java.time better than Date and Calendar?
+What is LocalDate?
+What is LocalTime?
+What is LocalDateTime?
+What is ZonedDateTime?
+What is Instant?
+What is the difference between Period and Duration?
+What is a timezone, and why is it tricky in backend systems?
+What is an annotation?
+What is the difference between built-in and custom annotations?
+What is annotation retention?
+What is annotation target?
+What is the difference between runtime and compile-time annotations?
+What is @Override actually doing?
+What is @Deprecated?
+What is @SuppressWarnings?
+What is the purpose of records?
+When should you use a record instead of a class?
+What is a compact constructor in a record?
+What is a sealed class?
+What problem does sealing solve?
+What is the difference between a sealed, final, and abstract class?
+What is a pattern in instanceof?
+What is a text block?
+What is switch expression syntax?
+What are var handles or modern low-level alternatives at a high level?
+What is the difference between core language features and library features in Java?
+5) Concurrency, multithreading, and asynchronous programming
+What is a thread?
+What is a process?
+What is the difference between process and thread?
+What is multitasking?
+What is concurrency versus parallelism?
+How do you create a thread in Java?
+What is the difference between extending Thread and implementing Runnable?
+What is Callable?
+What is the difference between Runnable and Callable?
+What is a thread lifecycle?
+What are thread states in Java?
+What is sleep()?
+What is yield()?
+What is join()?
+What is interruption?
+What is thread priority?
+What is synchronization?
+What is the purpose of the intrinsic lock / monitor?
+What is a race condition?
+What is deadlock?
+What is livelock?
+What is starvation?
+What is thread safety?
+What is immutability’s role in thread safety?
+What is the difference between synchronized method and synchronized block?
+What is the volatile keyword?
+What guarantees does volatile give?
+What does volatile not guarantee?
+What is atomicity?
+What is visibility?
+What is ordering / happens-before?
+What is the Java Memory Model?
+What is double-checked locking?
+Why was double-checked locking historically tricky?
+What are atomic classes like AtomicInteger?
+What is compare-and-swap?
+What is ReentrantLock?
+What is the difference between Lock and synchronized?
+What is a read-write lock?
+What is a semaphore?
+What is a countdown latch?
+What is a cyclic barrier?
+What is a phaser?
+What is a blocking queue?
+Why are blocking queues useful in producer-consumer problems?
+What is the Executor framework?
+What is a thread pool?
+What problems do thread pools solve?
+What is the difference between fixed, cached, scheduled, and single-thread executors?
+How do you choose thread pool size?
+What happens when a thread pool queue fills up?
+What is a rejection policy?
+What is CompletableFuture?
+How is CompletableFuture different from Future?
+What is asynchronous composition?
+What is callback hell?
+What is fork/join framework?
+What is work stealing?
+What is parallel stream concurrency risk?
+How do you debug a deadlock or high CPU thread issue?
+6) SQL, relational databases, JPA, Hibernate, transactions
+What is a relational database?
+What is SQL?
+What is the difference between SQL and NoSQL?
+What is a primary key?
+What is a foreign key?
+What is a unique constraint?
+What is normalization?
+What is denormalization?
+What is the difference between 1NF, 2NF, and 3NF?
+What is an index?
+How do indexes improve reads and hurt writes?
+What is a clustered index?
+What is a composite index?
+What is an index scan versus full table scan?
+What is a join?
+What is inner join?
+What is left join?
+What is right join?
+What is full outer join?
+What is self join?
+What is a subquery?
+What is a correlated subquery?
+What is aggregation in SQL?
+What is GROUP BY?
+What is HAVING?
+What is the difference between WHERE and HAVING?
+What is a transaction?
+What are ACID properties?
+What is isolation in transactions?
+What are common isolation levels?
+What is phantom read?
+What is non-repeatable read?
+What is dirty read?
+What is deadlock in the database?
+What is pessimistic locking?
+What is optimistic locking?
+What is a lost update?
+What is transaction rollback?
+What is commit?
+What is savepoint?
+What is connection pooling?
+Why is a connection pool important?
+What is ORM?
+What is JPA?
+What is Hibernate?
+What is the difference between JPA and Hibernate?
+What is an entity?
+What is the entity lifecycle?
+What is @Entity, @Id, @GeneratedValue?
+What is the difference between persist, merge, find, and remove?
+What is lazy loading?
+What is eager loading?
+What is the N+1 query problem?
+How do you solve the N+1 problem?
+What is first-level cache?
+What is second-level cache?
+What is query cache?
+What is dirty checking?
+What is the persistence context?
+What is cascading?
+What is orphan removal?
+What is the difference between CascadeType.ALL and explicit cascade options?
+What is fetch = FetchType.LAZY really doing?
+What is the difference between @OneToOne, @OneToMany, @ManyToOne, and @ManyToMany?
+What is a join table?
+What is mappedBy?
+What is JPQL?
+What is the difference between JPQL and native SQL?
+What is a repository in Spring Data JPA?
+What is a transaction boundary in a service layer?
+What does @Transactional actually do?
+Why does self-invocation break @Transactional?
+What is propagation?
+What is propagation REQUIRED?
+What is propagation REQUIRES_NEW?
+What is rollback behavior in Spring transactions?
+What is optimistic locking in JPA with @Version?
+What is the difference between save() and saveAndFlush()?
+When should you use DTOs instead of entities in APIs?
+What are common ORM performance mistakes?
+7) Spring core, DI, AOP, transaction management, testing
+What is the Spring Framework?
+What is inversion of control?
+What is dependency injection?
+What is constructor injection?
+What is setter injection?
+What is field injection, and why is it discouraged?
+What is a Spring bean?
+What is the Spring application context?
+What is bean scope?
+What are singleton, prototype, request, and session scopes?
+What is bean lifecycle in Spring?
+What is @Component, @Service, @Repository, and @Controller?
+What is component scanning?
+What is @Configuration?
+What is @Bean?
+What is the difference between @Component and @Bean?
+What is auto-wiring?
+What happens if there are multiple beans of the same type?
+What is @Primary?
+What is @Qualifier?
+What is Spring AOP?
+What is a proxy in Spring?
+What is a join point?
+What is a pointcut?
+What is advice?
+What is the difference between before, after, after-returning, after-throwing, and around advice?
+What is a use case for AOP?
+What is Spring transaction management?
+What is declarative transaction management?
+What is programmatic transaction management?
+What is the transaction abstraction in Spring?
+What is rollback rule configuration?
+Why do transactional proxies matter?
+What is a stereotype annotation?
+What is Spring Data?
+What is repository abstraction?
+What is the difference between Spring and Spring Boot?
+Why is Spring Boot used on top of Spring?
+What is the Spring Boot starter concept?
+What is Spring Boot auto-configuration?
+What are conditional beans?
+What is externalized configuration?
+What is the Environment in Spring?
+What are profiles?
+What is the difference between application.properties and application.yml?
+What is the purpose of Spring Boot tests?
+What is @SpringBootTest?
+What is @WebMvcTest?
+What is @DataJpaTest?
+What is Mockito used for?
+What is the difference between mock, spy, and stub?
+What is unit testing versus integration testing?
+What is test slice in Spring Boot?
+What is the value of contract tests?
+What is the difference between @MockBean and @Mock?
+What should you not test with mocks?
+How do you test exception scenarios?
+How do you test transactional methods?
+How do you test repository layer behavior?
+What makes a Spring application hard to test?
+8) Spring Boot, REST, configuration, actuator, logging
+What is Spring Boot good at?
+What problem does auto-configuration solve?
+What are starters?
+What is embedded server support?
+What is the difference between JAR and WAR deployment?
+What is @SpringBootApplication?
+What does @EnableAutoConfiguration do?
+What is the bootstrapping sequence of a Spring Boot app?
+What is command-line runner?
+What is application runner?
+How do you create REST endpoints in Spring Boot?
+What is @RestController?
+What is the difference between @Controller and @RestController?
+What is @RequestMapping?
+What is the difference between @GetMapping, @PostMapping, @PutMapping, and @DeleteMapping?
+What is request parameter binding?
+What is path variable binding?
+What is request body binding?
+What is @ResponseStatus?
+What is ResponseEntity?
+What is the best way to design error responses?
+What is global exception handling with @ControllerAdvice?
+What is validation in Spring Boot?
+What is Bean Validation?
+What is @Valid?
+What is @Validated?
+How do you handle partial updates?
+What is property binding?
+What is @ConfigurationProperties?
+What is the difference between @Value and configuration properties?
+What is Spring Boot actuator?
+Which actuator endpoints are commonly used?
+What should and should not be exposed by actuator?
+What is health check?
+What is readiness versus liveness?
+What is the significance of logging levels?
+Why is structured logging useful?
+What is the role of correlation IDs?
+How do you configure profiles for dev, test, and prod?
+What is the difference between application.properties and environment variables?
+What is externalized config in production?
+How do you manage secrets safely?
+How do you handle versioning in REST APIs?
+What are common mistakes in Spring Boot projects?
+What makes a Spring Boot app production-ready?
+9) Spring Security, authentication, authorization, JWT, OAuth2
+What is Spring Security?
+What is the difference between authentication and authorization?
+What is a security filter chain?
+What is the role of filters in security?
+What is CSRF?
+When is CSRF protection important?
+What is CORS?
+What problem does CORS solve?
+What is session-based authentication?
+What is token-based authentication?
+What is JWT?
+What is inside a JWT?
+Is JWT encrypted or just signed?
+What is the difference between access token and refresh token?
+What is OAuth2 at a high level?
+What is OpenID Connect?
+What is the authorization code flow?
+What is client credentials flow?
+What is password flow, and why is it discouraged?
+What is role-based access control?
+What is authority versus role?
+How do you secure endpoints in Spring Security?
+What is method-level security?
+What are @PreAuthorize and @Secured used for?
+How do you hash passwords properly?
+Why should passwords never be stored in plain text?
+What is password salting?
+What is password encoding?
+What is the purpose of UserDetailsService?
+What is AuthenticationManager?
+What is SecurityContext?
+What is AnonymousAuthenticationFilter?
+How do you secure REST APIs differently from web apps?
+What is stateless security?
+What are common Spring Security interview traps?
+Why is exposing JWT in logs dangerous?
+How do you invalidate tokens?
+What is token revocation?
+What is the security impact of weak CORS configuration?
+What is the difference between secure and insecure defaults?
+10) Microservices, distributed systems, resilience, messaging, observability
+What is a monolith?
+What is a microservice?
+Why do companies move from monolith to microservices?
+When is microservices a bad idea?
+What is service discovery?
+What is an API gateway?
+What problem does an API gateway solve?
+What is client-side discovery?
+What is server-side discovery?
+What is centralized configuration?
+What is Spring Cloud used for?
+What is the difference between Spring Cloud and Spring Boot?
+What is a circuit breaker?
+Why does a circuit breaker help resilience?
+What is retry, and when can it make things worse?
+What is timeout handling?
+What is bulkhead isolation?
+What is rate limiting?
+What is throttling?
+What is fallback?
+What is idempotency in distributed calls?
+Why is idempotency important for retries?
+What is REST, and when is REST not enough?
+What is the difference between REST and messaging?
+What is synchronous communication?
+What is asynchronous communication?
+What is pub-sub?
+What is a message broker?
+What is Kafka used for in microservices?
+What is RabbitMQ used for in microservices?
+What is event-driven architecture?
+What is event sourcing?
+What is CQRS?
+What is the Saga pattern?
+What is distributed tracing?
+What is log correlation?
+What is metrics versus logs versus traces?
+What are SLIs, SLOs, and SLAs?
+What is backpressure?
+What is eventual consistency?
+What is the CAP theorem?
+What is database per service?
+What is shared database anti-pattern?
+How do you handle distributed transactions?
+How do you debug a production outage across services?
+11) HTTP, REST, web, API design
+What is HTTP?
+What does it mean that HTTP is stateless?
+What are common HTTP methods?
+Which HTTP methods are safe?
+Which HTTP methods are idempotent?
+What is the difference between GET, POST, PUT, PATCH, and DELETE?
+What status codes should a backend developer know?
+What is the difference between 200, 201, 204, 400, 401, 403, 404, 409, 422, and 500?
+What is content negotiation?
+What are HTTP headers used for?
+What is caching in HTTP?
+What are ETags?
+What is pagination?
+What is cursor pagination versus offset pagination?
+What is filtering and sorting in APIs?
+What is API versioning?
+What is a good REST resource design?
+What makes an API idempotent?
+What is HATEOAS?
+What is the difference between URI and URL?
+What is JSON?
+What is serialization format choice in APIs?
+What is rate limiting at API layer?
+What is API gateway vs reverse proxy?
+What is request validation?
+What is response shape consistency?
+What is error contract design?
+What is correlation ID propagation?
+What is backward compatibility in APIs?
+What causes API brittleness?
+12) System design and advanced architecture
+How do you gather requirements for a system design problem?
+How do you estimate traffic and storage?
+How do you think about scalability?
+How do you think about latency?
+How do you think about throughput?
+How do you decide between SQL and NoSQL?
+How do you decide between monolith and microservices?
+How do you design for high availability?
+How do you design for fault tolerance?
+How do you design for disaster recovery?
+What is replication?
+What is sharding?
+What is partitioning?
+What is consistent hashing?
+What is load balancing?
+What is horizontal scaling?
+What is vertical scaling?
+What is sticky session, and why is it risky?
+What is cache invalidation?
+What caching strategies do you know?
+What is LRU cache?
+What is write-through versus write-back caching?
+What is CDN?
+What is object storage versus block storage?
+What is rate-based admission control?
+How do you handle hot keys?
+How do you handle hot partitions?
+How do you design an upload/download service?
+How do you design a URL shortener?
+How do you design a notification system?
+How do you design a job scheduler?
+How do you design a chat system?
+How do you design a feed/timeline system?
+How do you design a search system?
+How do you design a payment flow safely?
+How do you design for exactly-once semantics?
+Is exactly-once really possible end to end?
+How do you make systems resilient to retries?
+How do you prevent duplicate processing?
+How do you handle distributed locks?
+When would you use ZooKeeper, Redis locks, or database locks?
+What is eventual consistency trade-off in product systems?
+How do you model data for reporting vs transactions?
+How do you choose synchronous versus asynchronous boundaries?
+How do you design observability into a system?
+How do you design audit logging?
+How do you design multi-tenancy?
+How do you handle tenant isolation?
+How do you handle GDPR-like deletion requirements?
+How do you evolve architecture without breaking production?
+13) Project, coding round, behavioral, debugging, and senior-level scenario questions
+Tell me about the toughest backend problem you solved.
+Why did you choose Java and Spring for your project?
+What performance issue did you actually measure?
+What would you refactor in your current project?
+Where is your code over-engineered?
+Where is your code under-designed?
+How do you decide what belongs in controller, service, and repository?
+How do you decide what should be synchronous versus async in a feature?
+How do you debug a NullPointerException in production?
+How do you debug a memory leak?
+How do you debug slow API response times?
+How do you debug a deadlock?
+How do you debug high CPU usage?
+How do you debug an intermittent test failure?
+How do you debug a database timeout?
+How do you debug a transaction rollback issue?
+How do you handle a production bug when logs are incomplete?
+How do you handle a bad deployment?
+How do you roll back safely?
+How do you design safe migrations for schema changes?
+How do you write maintainable unit tests?
+How do you write tests for edge cases?
+How do you write tests for concurrency bugs?
+How do you choose between using an in-memory DB and Testcontainers?
+How do you keep a codebase readable as it grows?
+How do you review someone else’s backend code?
+How do you prioritize correctness, speed, and maintainability?
+How do you explain a trade-off you made in design?
+How do you answer “why should we hire you” for a backend role?
+How do you handle a question you do not know in interview?

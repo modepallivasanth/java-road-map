@@ -1,0 +1,676 @@
+Here is a comprehensive, meticulously categorized list of 500+ Java Backend
+Interview Questions, tailored for your 3.8 Years of Experience (covering
+everything from standard service-based company questions to the deep,
+architecture-heavy questions asked by top product-based companies).
+
+As requested, this is strictly the detailed question list across all categories.
+
+Phase 1: Core Java (Foundation, OOPs, Strings)
+
+Service-based companies often start here to test your foundation.
+
+1.  What is the exact difference between JDK, JRE, and JVM?
+2.  Explain the principles of Object-Oriented Programming (OOP). How do you
+    apply them?
+3.  How does Java achieve Platform Independence?
+4.  What is the difference between abstract class and interface? What changed in
+    Java 8 and Java 9 regarding interfaces?
+5.  Can an interface extend multiple interfaces? Can a class implement multiple
+    interfaces? How do you resolve default method conflicts?
+6.  Explain Method Overloading vs Method Overriding. Can we override static
+    methods? Can we override private methods?
+7.  What is the difference between final, finally, and finalize()?
+8.  Why is String immutable in Java? What are the benefits of this immutability?
+9.  Explain the String Constant Pool (SCP). Where does it reside in memory?
+10. String vs StringBuilder vs StringBuffer – when to use which?
+11. What is a Marker Interface? Give examples (Serializable, Cloneable). How do
+    they work internally?
+12. Shallow Copy vs Deep Copy in Java? How do you implement a Deep Copy?
+13. What is the Object class? What are its methods?
+14. Explain the contract between equals() and hashCode(). What happens if you
+    override equals() but not hashCode()?
+15. How does the clone() method work? Is it good practice to use it?
+16. What is the difference between pass-by-value and pass-by-reference? How does
+    Java handle object references?
+17. What are Access Modifiers in Java? Explain their scope.
+18. What is a Memory Leak in Java if Java has a Garbage Collector?
+19. How do you create a truly Immutable class in Java? (What if the class
+    contains a mutable object like java.util.Date?)
+20. Explain Covariant Return Types in Java.
+21. What is the use of the transient keyword? What about volatile?
+22. What is Type Erasure in Java Generics?
+23. Explain upper bounds (? extends T) and lower bounds (? super T) in Generics
+    (PECS principle).
+24. What are Enums in Java? Can an Enum implement an interface? Can it be
+    instantiated using new?
+25. Explain Classloaders in Java (Bootstrap, Extension, Application).
+26. How does Java Reflection work? When should you avoid it?
+27. What are Annotations? How do you create a custom Annotation?
+28. Difference between ClassNotFoundException and NoClassDefFoundError?
+29. What is Serialization and Deserialization? What is serialVersionUID?
+30. How do you prevent a class from being subclassed?
+
+Phase 2: Java Collections Framework
+
+Crucial for both Product and Service-based companies. 31. Explain the Collection
+hierarchy in Java. 32. Collection vs Collections? 33. Difference between List,
+Set, and Map. 34. ArrayList vs LinkedList? When would you choose one over the
+other? 35. How does ArrayList grow dynamically? What is the default capacity and
+growth factor? 36. Explain the internal working of HashMap. (Crucial: Hash
+collision, Buckets, Node array). 37. What changes were made to HashMap in
+Java 8? (Treeify threshold, O(log n) lookup). 38. Why is it recommended to use a
+power of 2 for HashMap capacity? 39. What is a ConcurrentHashMap? How does it
+differ from Hashtable and Collections.synchronizedMap()? 40. Explain the
+internal working of ConcurrentHashMap (Java 7 Segment locking vs Java 8 CAS &
+Node locking). 41. What is a TreeMap? When would you use it over a HashMap? 42.
+HashSet vs TreeSet vs LinkedHashSet? 43. How does HashSet work internally? 44.
+Explain the difference between Iterator and ListIterator. 45. What is the
+difference between Fail-Fast and Fail-Safe iterators? Give examples. 46. How
+does PriorityQueue work internally? (Min-heap / Max-heap). 47. What is
+WeakHashMap? Provide a use case. 48. What is an IdentityHashMap? 49. Explain the
+Comparable vs Comparator interfaces. Which one modifies the original class? 50.
+What is CopyOnWriteArrayList? When should it be used? 51. What is a
+BlockingQueue? How is it used in Producer-Consumer problems? 52. Difference
+between ArrayBlockingQueue and LinkedBlockingQueue? 53. How do you sort a
+HashMap by values? 54. What happens if two threads try to modify a HashMap
+simultaneously? 55. Can we use null as a key in HashMap? What about
+ConcurrentHashMap? Why? 56. What is the Deque interface? 57. Explain EnumSet and
+EnumMap. Why are they highly efficient?
+
+Phase 3: Multithreading & Concurrency
+
+Extremely important for Product-based companies & Senior Roles. 58. What is a
+Thread in Java? Difference between Process and Thread. 59. Explain the Thread
+Lifecycle (New, Runnable, Blocked, Waiting, Timed Waiting, Terminated). 60.
+Runnable vs Callable? 61. Thread.start() vs Thread.run()? 62. Explain the
+Executor Framework. Why is it better than creating raw threads? 63. Difference
+between execute() and submit() in ExecutorService? 64. Explain different types
+of Thread Pools (FixedThreadPool, CachedThreadPool, ScheduledThreadPool,
+SingleThreadExecutor). 65. How does CachedThreadPool work? When can it cause
+OutOfMemoryError? 66. What is shutdown() vs shutdownNow() in ExecutorService?
+67\. Explain the Future interface. What does Future.get() do? 68. What is
+CompletableFuture (Java 8)? How is it different from Future? 69. Explain
+thenApply(), thenAccept(), and thenCompose() in CompletableFuture. 70. What is
+the volatile keyword? Explain the visibility problem and happens-before
+relationship. 71. What is the synchronized keyword? Difference between
+synchronized method and synchronized block? 72. What is a Race Condition? How do
+you prevent it? 73. What is a Deadlock? How do you detect and prevent it? 74.
+Deadlock vs Livelock vs Starvation? 75. Explain wait(), notify(), and
+notifyAll(). Why must they be called from a synchronized block? 76. Why are
+wait() and notify() in the Object class, not the Thread class? 77.
+Thread.sleep() vs Object.wait()? 78. What are Atomic classes (AtomicInteger,
+AtomicReference)? How do they achieve thread safety without synchronization? 79.
+What is CAS (Compare-And-Swap)? 80. What is a ReentrantLock? How does it differ
+from a synchronized block? 81. Explain ReadWriteLock. When is it beneficial? 82.
+What is a ThreadLocal? What are its use cases and potential dangers (memory
+leaks)? 83. What is a CountDownLatch? 84. What is a CyclicBarrier? Difference
+between CountDownLatch and CyclicBarrier? 85. What is a Semaphore? How does it
+work? 86. What is a Phaser? 87. What is ForkJoinPool? How does work-stealing
+work? 88. Explain the Producer-Consumer problem and write code using wait/notify
+and BlockingQueue. 89. What is the Thread.yield() method? 90. What is a Daemon
+Thread? How is it created? 91. What is context switching? Why is it expensive?
+92. (Java 21) What are Virtual Threads (Project Loom)? How do they differ from
+Platform Threads?
+
+Phase 4: JVM Internals, Memory Management, and Garbage Collection
+
+Differentiates a mid-level dev from a senior dev. 93. Explain the JVM
+Architecture (Classloader, Runtime Data Areas, Execution Engine). 94. Heap
+Memory vs Stack Memory in Java? 95. What is stored in the Method Area /
+Metaspace? 96. PermGen vs Metaspace (Java 8 change)? Why was it changed? 97.
+What is the Program Counter (PC) Register? 98. How does the Garbage Collector
+work in Java? 99. Explain the Generational Garbage Collection model (Young Gen,
+Old/Tenured Gen). 100. Eden Space vs Survivor Spaces (S0, S1)? 101. Minor GC vs
+Major GC vs Full GC? 102. What are GC Roots? How does Mark-and-Sweep work? 103.
+Explain different Types of Garbage Collectors: Serial, Parallel, CMS, G1 GC,
+ZGC. 104. How does G1 GC work? Why is it default in newer Java versions? 105.
+What is ZGC? What are its latency promises? 106. What is "Stop-the-World" (STW)
+pause? 107. How do you trigger Garbage Collection manually? (Is System.gc()
+guaranteed?) 108. Explain the flag -Xmx and -Xms. 109. What causes
+java.lang.OutOfMemoryError: Java heap space? 110. What causes
+java.lang.OutOfMemoryError: Metaspace? 111. What causes StackOverflowError? 112.
+How do you profile a Java application? (JConsole, VisualVM, Java Mission
+Control). 113. What is a Heap Dump? How do you generate and analyze it? 114.
+What is JIT (Just-In-Time) compilation? Explain C1 and C2 compilers. 115. What
+is Escape Analysis in JVM? 116. What is String Deduplication in G1 GC? 117.
+Explain happens-before guarantee in JVM memory model.
+
+Phase 5: Java 8 to Java 21 Features
+
+Essential for modern development (3.8 YoE must know these inside out). 118. What
+are Lambda Expressions? How do they affect the generated bytecode? 119. What is
+a Functional Interface? (Explain @FunctionalInterface). 120. Explain built-in
+functional interfaces: Predicate, Function, Supplier, Consumer. 121. What is the
+Streams API? Intermediate vs Terminal operations? 122. Difference between map()
+and flatMap() in Streams? 123. How does reduce() work in Streams? 124. What is
+the difference between findFirst() and findAny()? 125. Parallel Streams vs
+Sequential Streams? When should you AVOID parallel streams? 126. What is the
+Optional class? Why was it introduced? 127. Optional.orElse() vs
+Optional.orElseGet()? 128. Default and Static methods in interfaces? Why were
+default methods added? 129. What are Method References (::)? 130. Explain the
+new Date and Time API (java.time). Why is java.util.Date deprecated? 131. What
+is StringJoiner? 132. (Java 9) What is the Java Module System (Project Jigsaw)?
+Benefits? 133. (Java 9) Factory methods for collections (List.of(), Map.of()).
+Are they mutable? 134. (Java 10) What is Local-Variable Type Inference (var)?
+Where can it NOT be used? 135. (Java 11) New String methods (isBlank(), lines(),
+strip())? 136. (Java 11) The new HttpClient API? 137. (Java 14) What are Switch
+Expressions? 138. (Java 15) What are Text Blocks? 139. (Java 16) What are
+Records? Can a Record extend a class or implement an interface? 140. (Java 17)
+What are Sealed Classes? How do they aid in Domain-Driven Design? 141.
+(Java 17+) Pattern Matching for instanceof and switch. 142. (Java 21) Virtual
+Threads - How do you create them? 143. (Java 21) Structured Concurrency
+(Preview) and Scoped Values. 144. (Java 21) Sequenced Collections interface.
+
+Phase 6: Spring Framework & Spring Boot Core
+
+The bread and butter of a Java Backend Developer. 145. Difference between Spring
+and Spring Boot? 146. What is Inversion of Control (IoC) and Dependency
+Injection (DI)? 147. Constructor Injection vs Setter Injection vs Field
+Injection? Why is Field Injection discouraged? 148. What is the
+ApplicationContext? Difference between ApplicationContext and BeanFactory? 149.
+Explain the Spring Bean Lifecycle. 150. What are the Spring Bean Scopes?
+(Singleton, Prototype, Request, Session, Application, WebSocket). 151. How do
+you inject a Prototype bean into a Singleton bean? (Explain @Lookup). 152. What
+does @SpringBootApplication do internally? (Break down the 3 annotations). 153.
+How does Spring Boot Auto-Configuration work? (@EnableAutoConfiguration,
+spring.factories / AutoConfiguration.imports). 154. @Component vs @Service vs
+@Repository vs @Controller? 155. @Controller vs @RestController? 156.
+@RequestMapping vs @GetMapping? 157. @RequestParam vs @PathVariable? 158. What
+is @Primary and @Qualifier? 159. What is @ControllerAdvice? How do you implement
+Global Exception Handling? 160. How does Spring AOP work? (Aspect, Advice,
+Pointcut, JoinPoint, Weaving). 161. JDK Dynamic Proxies vs CGLIB Proxies in
+Spring AOP? 162. How does @Transactional work internally? 163. Explain
+@Transactional Propagation levels (REQUIRED, REQUIRES_NEW, NESTED, etc.). 164.
+Explain @Transactional Isolation levels (READ_UNCOMMITTED, READ_COMMITTED,
+REPEATABLE_READ, SERIALIZABLE). 165. Why does self-invocation of an
+@Transactional method not start a transaction? 166. What is Spring Boot
+Actuator? Name some critical endpoints (/health, /metrics, /heapdump). 167. How
+do you secure Actuator endpoints? 168. How do you externalize configuration in
+Spring Boot? (application.properties, .yml, environment variables). 169. Explain
+Spring Profiles. How do you load profile-specific properties? 170. Difference
+between @Value and @ConfigurationProperties? 171. Explain Filter vs Interceptor
+in Spring. When to use which? 172. How do you handle CORS in Spring Boot? 173.
+What is Spring WebFlux? How does it differ from Spring MVC? 174. Reactor Core:
+Mono vs Flux? 175. How does Spring Boot handle Embedded Servers (Tomcat, Jetty,
+Undertow)? How to switch them? 176. What is the role of DispatcherServlet? 177.
+How do you schedule tasks in Spring Boot? (@Scheduled, Cron expressions). 178.
+How do you run logic at application startup? (CommandLineRunner,
+ApplicationRunner, @EventListener(ApplicationReadyEvent.class)).
+
+Phase 7: Spring Data JPA & Hibernate
+
+179. Difference between JPA, Hibernate, and Spring Data JPA?
+180. What is an Entity? Explain @Entity and @Table.
+181. Explain the Entity Lifecycle states (Transient, Managed, Detached,
+     Removed).
+182. How does the EntityManager work?
+183. save() vs saveAndFlush() in Spring Data JPA?
+184. findById() vs getById() / getReferenceById()? (Eager vs Lazy evaluation).
+185. Explain Fetch Types: FetchType.LAZY vs FetchType.EAGER. Which is the
+     default for different associations?
+186. What is the N+1 Select Problem? How do you solve it? (Join Fetch, Entity
+     Graphs, @BatchSize).
+187. What is @EntityGraph?
+188. Explain the difference between First Level Cache and Second Level Cache in
+     Hibernate.
+189. How do you configure a Second Level Cache? (Ehcache, Redis).
+190. What is Query Cache?
+191. Explain Cascade Types (ALL, PERSIST, MERGE, REMOVE).
+192. CascadeType.REMOVE vs orphanRemoval=true?
+193. How do you map relationships: One-to-One, One-to-Many, Many-to-One,
+     Many-to-Many?
+194. What is the owning side of a relationship? (Explain mappedBy).
+195. How do you execute native SQL queries in Spring Data JPA?
+196. What is JPQL? How does it differ from SQL?
+197. Explain Optimistic Locking vs Pessimistic Locking.
+198. How do you implement Optimistic Locking in JPA? (@Version).
+199. What happens if an OptimisticLockException is thrown? How do you handle it?
+200. What is Auditing in Spring Data JPA? (@CreatedBy, @CreatedDate,
+     @LastModifiedDate).
+201. How do you manage database schema migrations? (Flyway, Liquibase).
+202. What is @MappedSuperclass? Difference from JOINED inheritance?
+203. How do you use Projections in Spring Data JPA to optimize queries?
+204. Explain Dirty Checking in Hibernate.
+205. Why should you avoid using Lombok @Data, @EqualsAndHashCode, and @ToString
+     with JPA Entities?
+206. How does Connection Pooling work? (HikariCP specifics).
+
+Phase 8: Database & SQL / NoSQL (PostgreSQL, MySQL, MongoDB)
+
+Extremely heavily tested for 3+ YoE. 207. What are ACID properties? Explain
+each. 208. Explain Transaction Isolation Levels and the anomalies they prevent
+(Dirty Read, Non-repeatable read, Phantom read). 209. What are Database Indexes?
+How do they work internally? (B-Trees, B+ Trees). 210. Clustered Index vs
+Non-Clustered Index? 211. What is a Composite Index? Does the order of columns
+matter? (Leftmost prefix rule). 212. What happens to performance if there are
+too many indexes on a table? 213. Explain different types of SQL Joins (INNER,
+LEFT, RIGHT, FULL, CROSS). 214. What is a Self Join? 215. How do you optimize a
+slow database query? (Explain EXPLAIN / EXPLAIN ANALYZE). 216. What is Database
+Normalization? Explain 1NF, 2NF, 3NF, BCNF. 217. When would you Denormalize a
+database? 218. What is the difference between DELETE, TRUNCATE, and DROP? 219.
+WHERE vs HAVING clause? 220. UNION vs UNION ALL? 221. What are Stored
+Procedures, Functions, and Triggers? Should business logic be in the DB? 222.
+What is a View? What is a Materialized View? 223. How does database Pagination
+work? (OFFSET/LIMIT vs Keyset/Cursor Pagination). Why is OFFSET slow for large
+datasets? 224. SQL vs NoSQL. When to choose which? 225. Explain the CAP Theorem.
+Which two can a Relational DB provide? Which two does Cassandra/MongoDB provide?
+226. What is PACELC theorem? 227. MongoDB: Document structure? _id field? 228.
+How does Replication work in MongoDB (Replica sets)? 229. What is Sharding in
+MongoDB? Explain Shard Key selection. 230. Cassandra: How does data partitioning
+work? (Consistent hashing). 231. Cassandra: What are Tombstones? 232. What is
+Eventual Consistency vs Strong Consistency? 233. How do you handle concurrent
+updates in a database? 234. What is a Database Connection Leak? 235. Explain the
+concept of Write-Ahead Logging (WAL). 236. What is Database Partitioning
+(Horizontal vs Vertical)? 237. Explain Master-Slave architecture. How do you
+handle read-heavy systems?
+
+Phase 9: Microservices Architecture & Distributed Systems
+
+This decides if you get a Senior/Lead title. 238. Monolithic vs Microservices
+architecture? Pros and Cons. 239. How do you decompose a Monolith into
+Microservices? (Strangler Fig Pattern, Domain-Driven Design). 240. What is
+Domain-Driven Design (DDD)? (Bounded Context, Aggregate, Ubiquitous Language).
+241. How do microservices communicate? (Synchronous REST/gRPC vs Asynchronous
+Messaging). 242. What is an API Gateway? What are its responsibilities?
+(Routing, Rate Limiting, Authentication). Spring Cloud Gateway? 243. What is
+Service Discovery? (Netflix Eureka, Consul, K8s DNS). How does it work? 244.
+Client-side vs Server-side Load Balancing? (Ribbon/Spring Cloud LoadBalancer).
+245. What is the Circuit Breaker Pattern? Why is it needed? (Resilience4j). 246.
+Explain the 3 states of a Circuit Breaker (Closed, Open, Half-Open). 247. What
+is the Bulkhead pattern? Rate Limiter? Retry pattern? 248. How do you implement
+Distributed Tracing? (Sleuth, Zipkin, OpenTelemetry, TraceID, SpanID). 249. How
+do you handle Distributed Logging? (ELK/EFK Stack, Splunk). 250. How do you
+manage configurations across multiple microservices? (Spring Cloud Config,
+HashiCorp Consul/Vault). 251. Explain Distributed Transactions. Why is 2-Phase
+Commit (2PC) bad for microservices? 252. What is the Saga Pattern? (Choreography
+vs Orchestration). 253. What is the Outbox Pattern? How does it solve the
+dual-write problem? 254. What is CQRS (Command Query Responsibility
+Segregation)? When should you use it? 255. What is Event Sourcing? How does it
+relate to CQRS? 256. How do you ensure Idempotency in REST APIs and Message
+Listeners? 257. What is a Service Mesh? (Istio, Linkerd). How is it different
+from an API Gateway? 258. What is the Sidecar pattern? 259. How do you handle
+Authentication in Microservices? (JWT passed from Gateway, OAuth2). 260. How do
+you manage database per service? Can one service query another service's
+database? 261. How do you handle backward compatibility in APIs? (API
+Versioning). 262. Describe zero-downtime deployment strategies (Blue-Green,
+Canary, Rolling updates). 263. What is the BFF (Backend for Frontend) Pattern?
+264. How to prevent the "Thundering Herd" problem?
+
+Phase 10: System Design (High-Level & Low-Level Design)
+
+For Product-based companies. 265. What are the SOLID Principles? Explain each
+with Java examples. 266. What is DRY, KISS, and YAGNI? 267. Explain Design
+Patterns: Singleton (Double-checked locking), Factory vs Abstract Factory,
+Builder, Prototype. 268. Explain Structural Patterns: Adapter, Facade,
+Decorator, Proxy. 269. Explain Behavioral Patterns: Strategy, Observer, Command,
+Chain of Responsibility. 270. How would you design a Rate Limiter? (Token
+Bucket, Leaky Bucket, Sliding Window algorithms). 271. How would you design a
+URL Shortener (like bit.ly)? (Base62 encoding, KGS). 272. How would you design a
+Notification System? (Email, SMS, Push). 273. How would you design a Chat
+Application (WhatsApp/Messenger)? (WebSockets, XMPP, Message ordering). 274. How
+would you design a Parking Lot? (LLD - Classes, Interfaces, Design Patterns).
+275. How would you design an E-commerce system (Amazon/Flipkart)? (Cart,
+Inventory, Checkout, Payment Gateway). 276. How would you design a highly
+scalable Payment Gateway? (Idempotency, 2-phase commit, ACID). 277. How would
+you design a ride-hailing service (Uber/Ola)? (Quadtrees, Geohashing). 278. How
+would you design a Streaming Service (Netflix/YouTube)? (CDN, transcoding,
+adaptive bitrate). 279. Explain Consistent Hashing. Where is it used? 280. What
+is the role of a CDN (Content Delivery Network)? 281. How do you scale a system
+from 100 to 1,000,000 users? 282. Load Balancing Strategies: Round Robin, Least
+Connections, IP Hash. 283. Active-Active vs Active-Passive failover? 284. Single
+Point of Failure (SPOF) - How to identify and eliminate? 285. LLD: Design a
+Vending Machine. 286. LLD: Design an ATM System. 287. LLD: Design a Library
+Management System. 288. LLD: Design a Movie Ticket Booking System (BookMyShow) -
+Focus on concurrency handling for seats.
+
+Phase 11: Caching & Redis
+
+289. Why do we need Caching?
+290. Explain Cache Eviction Policies (LRU, LFU, FIFO). How to implement LRU in
+     Java? (LinkedHashMap).
+291. Cache Aside vs Write-Through vs Write-Behind vs Write-Around?
+292. What is Cache Stampede (Thundering Herd)? How do you prevent it?
+293. What is Cache Penetration? How to solve it? (Bloom Filters).
+294. What is Cache Breakdown?
+295. What is Cache Avalanche? Solution?
+296. Redis vs Memcached?
+297. Explain Redis Data Structures (Strings, Hashes, Lists, Sets, Sorted Sets).
+298. Where would you use a Redis Sorted Set? (Leaderboards).
+299. What is Redis Pub/Sub? How is it different from Kafka/RabbitMQ?
+300. How does Redis handle persistence? (RDB vs AOF).
+301. Is Redis single-threaded? If yes, why is it so fast?
+302. Explain Redis Cluster and Data Sharding.
+303. How to implement distributed locking using Redis? (Redlock algorithm).
+304. How do you use Spring Cache? (@Cacheable, @CachePut, @CacheEvict).
+
+Phase 12: Messaging, Event-Driven Architecture (Kafka / RabbitMQ)
+
+305. Synchronous vs Asynchronous Communication?
+306. RabbitMQ vs Apache Kafka? When to use which?
+307. Explain RabbitMQ concepts: Exchange, Queue, Binding, Routing Key.
+308. Explain RabbitMQ Exchange types (Direct, Topic, Fanout, Headers).
+309. Explain Kafka Architecture: Brokers, Topics, Partitions, Replicas.
+310. What is the role of Zookeeper / KRaft in Kafka?
+311. How does Kafka scale? (Partitions).
+312. Explain Kafka Consumer Groups. What happens if consumers > partitions?
+313. How does Kafka guarantee message ordering? (Within a partition).
+314. What is the offset in Kafka? How is it committed? (Auto vs Manual commit).
+315. Explain Delivery Guarantees: At-most-once, At-least-once, Exactly-once.
+316. How to achieve Exactly-once semantics in Kafka?
+317. What is a Dead Letter Queue (DLQ)? How do you handle failed messages?
+318. What is Kafka Log Retention? What is Log Compaction?
+319. How do you handle Consumer Lag in Kafka?
+320. What is a Kafka Rebalance? When does it happen?
+321. What are Kafka Producers? What is the acks configuration (acks=0, acks=1,
+     acks=all)?
+322. How to handle poison pill messages in Kafka/RabbitMQ?
+
+Phase 13: Web Services, API Design (REST, gRPC, GraphQL)
+
+323. What is REST? What are its guiding principles?
+324. Explain Richardson Maturity Model for REST APIs.
+325. PUT vs PATCH? POST vs PUT?
+326. What makes an HTTP method Idempotent? Which methods are idempotent?
+327. How do you design REST APIs for a resource with relations? (e.g., GET
+     /users/{id}/orders).
+328. How do you handle API Versioning? (URI, Query param, Header, Content
+     Negotiation).
+329. What are the best practices for REST API status codes?
+     (200, 201, 204, 400, 401, 403, 404, 409, 429, 500).
+330. What is GraphQL? How does it solve Over-fetching and Under-fetching?
+331. GraphQL queries vs mutations vs subscriptions?
+332. What is the N+1 problem in GraphQL? (DataLoader solution).
+333. What is gRPC? How is it different from REST?
+334. Explain Protocol Buffers (Protobuf). Why are they faster than JSON?
+335. Streaming in gRPC (Unary, Server-streaming, Client-streaming,
+     Bi-directional).
+336. WebSockets vs Server-Sent Events (SSE) vs Long Polling?
+337. How to secure a REST API?
+
+Phase 14: Security (Spring Security, OAuth2, JWT)
+
+338. Explain Spring Security Architecture. (DelegatingFilterProxy, FilterChain,
+     AuthenticationManager, ProviderManager).
+339. Authentication vs Authorization?
+340. What is UserDetails and UserDetailsService in Spring Security?
+341. What is a JWT (JSON Web Token)? Explain its structure (Header, Payload,
+     Signature).
+342. Is JWT encrypted or encoded? Can the client read the payload?
+343. Where should you store a JWT on the client side? (Local Storage vs HttpOnly
+     Cookies).
+344. How do you invalidate/revoke a JWT before it expires? (Token blacklisting).
+345. JWT vs Session-based authentication?
+346. What is OAuth 2.0? Explain its components (Resource Owner, Client,
+     Authorization Server, Resource Server).
+347. Explain OAuth2 Grant Types: Authorization Code, Client Credentials,
+     Implicit, Password. Which one is for server-to-server?
+348. What is OpenID Connect (OIDC)? Difference from OAuth2?
+349. What is CORS (Cross-Origin Resource Sharing)? Preflight request (OPTIONS)?
+350. What is CSRF (Cross-Site Request Forgery)? How to prevent it? (CSRF
+     Tokens). Why is CSRF not a big issue with stateless JWTs?
+351. What is XSS (Cross-Site Scripting)? How to prevent it in Java?
+352. How do you prevent SQL Injection? (Prepared Statements).
+353. Password Hashing: Why use BCrypt over MD5/SHA? What is a Salt?
+354. Explain Role-Based Access Control (RBAC) vs Attribute-Based Access Control
+     (ABAC). How to do method-level security in Spring (@PreAuthorize)?
+
+Phase 15: DevOps, Docker, Kubernetes, CI/CD, Testing
+
+355. What is Docker? Image vs Container?
+356. Dockerfile instructions: CMD vs ENTRYPOINT? ADD vs COPY?
+357. What are Docker image layers? How do you optimize a Dockerfile for a Spring
+     Boot app? (Multi-stage builds, Jib).
+358. What is Docker Compose?
+359. What is Kubernetes (K8s)? K8s Master and Worker Nodes components?
+360. Explain K8s Pods, Deployments, ReplicaSets.
+361. Explain K8s Services (ClusterIP, NodePort, LoadBalancer).
+362. What is an Ingress Controller?
+363. ConfigMaps and Secrets in Kubernetes?
+364. How do you configure Liveness and Readiness probes for a Spring Boot app in
+     K8s?
+365. What is a CI/CD Pipeline? (Jenkins, GitLab CI, GitHub Actions).
+366. Explain Git workflow (GitFlow vs Trunk-based development).
+367. JUnit 4 vs JUnit 5 architecture?
+368. Mockito: @Mock vs @InjectMocks vs @Spy?
+369. How do you mock static methods? (Mockito inline).
+370. What are Testcontainers? Why are they better than in-memory DBs (H2) for
+     Integration Testing?
+371. What is SonarQube? Code coverage vs Code quality?
+372. TDD (Test-Driven Development) vs BDD (Behavior-Driven Development)
+     (Cucumber)?
+373. Explain contract testing (Spring Cloud Contract / Pact).
+
+Phase 16: Data Structures and Problem Solving (Product-based Focus)
+
+(Interviewers won't ask you to just "explain" these, but you will solve problems
+using them. Here are the most targeted concepts) 374. String Manipulation:
+Reverse string, Anagrams, Longest Palindromic Substring. 375. Arrays: Two Sum,
+Kadane’s Algorithm (Max Subarray), Merge Intervals, Trapping Rain Water. 376.
+Linked Lists: Reverse a LL, Detect cycle (Floyd’s algorithm), Merge two sorted
+lists, Find middle node. 377. Stacks/Queues: Valid Parentheses, Next Greater
+Element, LRU Cache implementation, Implement Queue using Stacks. 378. Trees: BST
+validations, Inorder/Preorder/Postorder traversals, LCA (Lowest Common
+Ancestor), Level Order Traversal, Max depth/diameter. 379. Graphs: BFS vs DFS,
+Cycle detection, Dijkstra’s Algorithm, Topological Sort (Course Schedule). 380.
+Hashing: Group Anagrams, Top K Frequent Elements. 381. Sorting & Searching:
+Binary Search, Merge Sort, Quick Sort time complexities. Find element in rotated
+sorted array. 382. Dynamic Programming: Climbing Stairs, Coin Change, Longest
+Increasing Subsequence, Knapsack 0/1. 383. Two Pointers / Sliding Window:
+Longest Substring Without Repeating Characters, Max Consecutive Ones. 384.
+Heaps: Find Kth largest element in an array, Merge K sorted lists. 385. Time &
+Space Complexity calculations (Big O notation) for all the above.
+
+Phase 17: Scenario-Based, Behavioral, and Troubleshooting (For 3.8 YoE)
+
+These define if you actually have real-world experience. 386. Scenario: Your
+Spring Boot application is consuming 100% CPU in production. How do you debug
+and resolve this? (Top, Thread Dumps, Jstack). 387. Scenario: Production logs
+show frequent OutOfMemoryError. How do you identify the root cause? (Heap dump
+analysis, Eclipse MAT). 388. Scenario: An API that normally takes 50ms is
+suddenly taking 5 seconds. What is your troubleshooting step-by-step approach?
+389. Scenario: A user reports that their payment was deducted, but the order was
+not placed. How do you handle this architecture-wise? (Saga, Reconciliation).
+390. Scenario: How do you perform a database schema alteration on a 50GB table
+in production without downtime? 391. Scenario: You have a batch job
+processing 10 million records nightly, but it's taking too long and failing. How
+do you optimize it? (Spring Batch, chunk processing, parallel processing). 392.
+Scenario: Your application needs to call a third-party API that fails randomly.
+How do you ensure your system remains resilient? 393. Scenario: How do you
+handle API security when two internal microservices talk to each other? 394.
+Scenario: The database is experiencing a high number of deadlocks. How do you
+resolve this? 395. Scenario: A Kafka consumer is failing to process a message
+and is stuck in a loop. How do you design your consumer to skip it but retain it
+for manual review? 396. Scenario: You deploy a new microservice version, and
+everything crashes. Explain your rollback strategy. 397. Scenario: What is the
+most challenging technical problem you solved in your current project? 398.
+Behavioral: Describe a time you disagreed with a Senior or Architect on a design
+choice. How did you resolve it? 399. Behavioral: How do you ensure code quality
+in your team? (Code reviews, static analysis). 400. Behavioral: Tell me about a
+time you broke production. What happened and how did you fix it?
+
+Phase 18: Advanced Niche, Framework Internals, and Extreme Edge Cases
+
+The "Bonus" phase that pushes the count over 500+ by going into the deep end of
+Java backend.
+
+Deep Core Java & Concurrency Edge Cases
+
+401. What happens if an exception is thrown inside a finally block?
+402. Can you stop a thread forcefully? Why is Thread.stop() deprecated?
+403. Explain Spurious Wakeups in threading and how to write loop checks to avoid
+     them.
+404. What is Lock Coarsening and Lock Elision in the JVM?
+405. How does LongAdder scale better than AtomicLong under high contention?
+406. Explain the concept of False Sharing in CPU caches. How does @Contended
+     help?
+407. What is the difference between System.exit(0) and
+     Runtime.getRuntime().halt(0)?
+408. How do you handle an InterruptedException properly? (Restore interrupted
+     status vs throw).
+409. What is a Shutdown Hook? How do you implement Graceful Shutdown in Java?
+410. Explain the internal working of ThreadLocalRandom.
+
+Deep JVM & Tuning
+
+411. What is the -XX:+PrintGCDetails flag?
+412. Explain TLAB (Thread-Local Allocation Buffer). Why is it used?
+413. What is PLAB (Promotion Local Allocation Buffer)?
+414. What are JVM Safepoints? Why do they impact performance?
+415. How do you tune the JVM for a high-throughput vs a low-latency application?
+416. What is the difference between intrinsic locks and JNI (Java Native
+     Interface)?
+417. What is GraalVM? How does Ahead-Of-Time (AOT) compilation differ from JIT?
+418. What are Native Images? (Spring Native). Pros and cons?
+
+Deep Spring & Hibernate
+
+419. How does Spring resolve Circular Dependencies? (3-level cache /
+     ObjectFactory). Why is it not supported by default in newer Spring Boot
+     versions?
+420. Explain the Proxy mechanism in Spring. When does self-invocation bypass the
+     proxy?
+421. How do you implement a Custom Scope in Spring?
+422. What is MethodReplacer in Spring?
+423. Explain Spring's TransactionSynchronizationManager.
+424. Hibernate: Explain the Session vs StatelessSession. When to use
+     StatelessSession?
+425. How do you handle Multiple DataSources in a single Spring Boot application?
+426. How do you implement Distributed Transactions using JTA (Java Transaction
+     API) and Atomikos?
+427. What is Bytecode Enhancement in Hibernate? (Lazy loading for basic
+     attributes).
+428. What is the @DynamicUpdate and @DynamicInsert annotation in Hibernate?
+
+Advanced Databases & Caching
+
+429. Explain MVCC (Multi-Version Concurrency Control) in PostgreSQL/MySQL.
+430. What is Gap Locking in InnoDB?
+431. How do you troubleshoot high I/O wait times on a database server?
+432. Redis: What is a Redis Pipeline? Why use it over multiple commands?
+433. Redis: Explain Lua scripting in Redis. Why is it useful for atomicity?
+434. Redis: What is the HyperLogLog data structure used for?
+435. Redis memory is full. What happens? (Explain maxmemory-policy).
+436. Explain Geo-spatial queries in MongoDB vs PostgreSQL (PostGIS).
+
+Advanced Microservices & Messaging
+
+437. What is the difference between Event Notification, Event-Carried State
+     Transfer, and Event Sourcing?
+438. Kafka: What happens when a consumer group receives a new member? (Rebalance
+     protocol, Sticky Assignor).
+439. Kafka: Explain max.poll.records and max.poll.interval.ms. What happens if
+     processing takes too long?
+440. Kafka Transactions: How does Kafka achieve read-committed isolation for
+     exact-once processing?
+441. RabbitMQ: What is a quorum queue? How does it differ from a mirrored queue?
+442. gRPC: How do you implement interceptors in gRPC for logging or auth?
+
+System Design (Advanced Components)
+
+443. How do you design a distributed ID generator? (Twitter Snowflake, UUID, DB
+     auto-increment).
+444. How does a Bloom Filter work? What is its false-positive rate?
+445. What is a Merkle Tree? Where is it used in distributed systems? (Cassandra
+     anti-entropy).
+446. What is a Distributed Hash Table (DHT)?
+447. Explain the Gossip Protocol.
+448. Raft vs Paxos Consensus Algorithms? (Basics of leader election).
+449. How do you design an autocomplete/typeahead system? (Trie data structure).
+450. How do you implement rate limiting in a distributed cluster without a
+     centralized Redis?
+
+Advanced Security & Cloud
+
+451. What is Mutual TLS (mTLS)? How is it used in a Service Mesh?
+452. How does OAuth2 PKCE flow work? Why is it safer than Implicit flow?
+453. What is a JWKS (JSON Web Key Set)? How does a resource server validate a
+     token from an auth server?
+454. How do you manage secrets in the cloud? (AWS Secrets Manager, HashiCorp
+     Vault).
+455. AWS/Cloud: SQS vs SNS? When to use which?
+456. Explain serverless computing (AWS Lambda). Cold start problem in Java?
+
+Tooling, Observability, and Miscellaneous
+
+457. What is the RED method for monitoring? (Rate, Errors, Duration).
+458. What is the USE method? (Utilization, Saturation, Errors).
+459. How do you structure logs for a log aggregator like Splunk/ELK? (JSON
+     logging, MDC - Mapped Diagnostic Context).
+460. What is a Git Rebase vs Git Merge? When do you squash commits?
+461. What is a Canary Release vs Dark Launching?
+462. How do you use Feature Toggles (Feature Flags) effectively? (e.g., Unleash,
+     LaunchDarkly).
+463. Explain standard HTTP caching headers (Cache-Control, ETag, Last-Modified).
+464. What is a Reverse Proxy vs Forward Proxy? (Nginx).
+
+Pure Logic / Rapid-Fire Tricky Questions
+
+465. Why does 1.0 / 0.0 give Infinity but 1 / 0 gives ArithmeticException?
+466. What will System.out.println(0.1 + 0.2 == 0.3) output and why? (IEEE 754
+     floating point).
+467. Why do you use BigDecimal for currency instead of double?
+468. Can you have an empty catch block? Why is it bad practice?
+469. Can you override a static method to make it non-static?
+470. Is List<String> a subclass of List<Object>? (Generics covariance).
+471. What happens if you put a return statement inside a finally block?
+472. How do you break out of nested loops in Java? (Labeled breaks).
+473. What is the StrictMath class? strictfp keyword?
+474. Why isn't String an array of characters?
+475. Can you use this inside a static method?
+
+Testing & Architecture specific to 3-5 YoE
+
+476. How do you mock a database call when testing a Service class?
+477. Explain Hexagonal Architecture (Ports and Adapters). How does it differ
+     from Layered Architecture?
+478. Clean Architecture: What belongs in the Core/Domain layer?
+479. Why should DTOs (Data Transfer Objects) be separated from Entities?
+480. Do you map DTOs manually or use libraries? (MapStruct vs ModelMapper). Why
+     is MapStruct preferred?
+481. How to manage large data exports (e.g., generating a 1M row CSV) without
+     OOM? (Streaming cursors, pagination).
+482. What happens if your server clock drifts? How does it affect OAuth tokens
+     and Distributed systems? (NTP).
+483. You inherit a massive, messy legacy monolithic codebase. How do you safely
+     refactor it?
+484. Explain "Shift-Left" testing in CI/CD.
+485. What are the rules for proper REST API URI naming? (Nouns, plurals,
+     lowercase).
+
+Latest Trends (Java 17-21 & Modern Ecosystem)
+
+486. How do Virtual Threads change the way we use ThreadLocal? (Scoped Values).
+487. How does the adoption of Virtual Threads affect Reactive Programming
+     (WebFlux/Project Reactor)? Will Reactive die?
+488. What is the jlink tool? How do you create a custom minimal JRE?
+489. What is Spring Boot 3 AOT compilation?
+490. Why did Spring Boot 3 migrate from javax.* to jakarta.* packages?
+491. What is the Foreign Function & Memory API (Project Panama)?
+492. Explain what a "Data Mesh" is compared to a "Data Lake".
+493. How do you handle Webhooks safely? (Signature verification, retry
+     policies).
+494. What is SSE (Server-Sent Events) and how do you implement it in Spring
+     Boot?
+495. How does RSocket differ from HTTP/REST?
+
+Deep Systems & Resiliency (The Final Frontier)
+
+496. How do you implement Zero-Trust Network Architecture in microservices?
+497. Your Redis cache node dies. What is the impact on the DB, and how does
+     Sentinel/Cluster handle it?
+498. In a 2PC (Two-Phase Commit), what happens if the coordinator crashes after
+     the "prepare" phase?
+499. How do you achieve true High Availability (HA) across multiple geographical
+     regions? (Active-Active global DBs like Spanner/Cockroach).
+500. Explain Chaos Engineering (e.g., Chaos Monkey). Why inject failures in
+     production?
+501. How to scale WebSockets? (Pub/Sub backplane with Redis/Kafka).
+502. What is the "Split-Brain" problem in distributed clusters (like
+     Elasticsearch or Zookeeper), and how do quorums solve it?
+503. If you have 3.8 years of experience, what technical implementation are you
+     most proud of, and how did you measure its success?
+------------------------------------
+
+
+From Another AI Source:
+
