@@ -298,12 +298,12 @@ main {
 
 .topic-card li {
   position: relative;
-  padding: 0.38rem 0.5rem 0.38rem 1rem;
+  padding: 0.38rem 1.8rem 0.38rem 1rem;
   font-size: 0.88rem;
   color: var(--text);
   line-height: 1.55;
   border-radius: 4px;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, opacity 0.25s ease;
 }
 
 .topic-card li::before {
@@ -622,5 +622,524 @@ main {
 
   .topic-card li:hover {
     background: none;
+  }
+}
+
+/* ===== Auth Area (Header) ===== */
+.auth-area {
+  display: flex;
+  align-items: center;
+}
+
+.auth-signin-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  color: var(--text-secondary);
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.auth-signin-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.auth-signin-btn svg {
+  flex-shrink: 0;
+}
+
+.auth-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+.auth-user-name {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.auth-signout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.auth-signout-btn:hover {
+  border-color: var(--hard);
+  color: var(--hard);
+}
+
+/* ===== Auth Modal ===== */
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.auth-modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: modalSlideIn 0.25s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.auth-modal-close:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.auth-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.auth-modal-header h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.auth-modal-header p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.google-signin-btn:hover {
+  background: var(--border);
+  border-color: var(--text-muted);
+}
+
+.google-signin-btn svg {
+  flex-shrink: 0;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.auth-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-submit-btn {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  color: #0c0c0c;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 0.25rem;
+}
+
+.auth-submit-btn:hover {
+  opacity: 0.9;
+}
+
+.auth-error {
+  font-size: 0.78rem;
+  color: var(--hard);
+  margin-top: 0.5rem;
+  min-height: 1.2em;
+}
+
+.auth-toggle-row {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.auth-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.auth-toggle-btn:hover {
+  color: var(--text);
+}
+
+.auth-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* ===== Checkboxes ===== */
+.topic-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  border: 1.5px solid var(--border-accent);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 2px;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.topic-checkbox:hover {
+  border-color: var(--accent);
+}
+
+.topic-checkbox:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(201, 150, 58, 0.3);
+}
+
+.topic-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #0c0c0c;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ===== Completed Items ===== */
+.topic-card li.completed {
+  opacity: 0.4;
+}
+
+.topic-card li.completed:hover {
+  opacity: 0.65;
+}
+
+/* ===== Bookmark Buttons ===== */
+.bookmark-btn {
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--border-accent);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  line-height: 1;
+}
+
+.topic-card li:hover .bookmark-btn {
+  opacity: 0.5;
+}
+
+.bookmark-btn:hover {
+  opacity: 1 !important;
+  color: var(--tricky);
+}
+
+.bookmark-btn.active {
+  opacity: 1;
+  color: var(--tricky);
+}
+
+/* ===== Section Progress Bars ===== */
+.section-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-progress-info {
+  flex-shrink: 0;
+}
+
+.section-progress-text {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.section-progress-track {
+  flex: 1;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.section-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--important));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ===== Overall Progress ===== */
+.overall-progress {
+  margin-top: 1.75rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.overall-progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.overall-progress-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.overall-progress-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.overall-progress-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.overall-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--important));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* ===== Filter Bar ===== */
+.filter-bar {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+}
+
+.filter-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.weak-topics-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.weak-topics-toggle:hover {
+  border-color: var(--tricky);
+  color: var(--tricky);
+}
+
+.weak-topics-toggle.active {
+  background: var(--tricky);
+  color: #0c0c0c;
+  border-color: var(--tricky);
+}
+
+.progress-summary {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== Weak Topics Hidden ===== */
+.weak-hidden {
+  display: none !important;
+}
+
+/* ===== Auth & Progress Responsive ===== */
+@media (max-width: 640px) {
+  .auth-user-name {
+    display: none;
+  }
+
+  .auth-modal {
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .filter-bar {
+    padding: 0.5rem 1rem;
+  }
+
+  .auth-signin-btn span {
+    display: none;
+  }
+
+  .section-progress {
+    gap: 0.5rem;
   }
 }
