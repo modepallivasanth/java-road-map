@@ -502,13 +502,59 @@ main {
   background: rgba(247, 246, 243, 0.85);
 }
 
-.category-tabs {
+.category-tabs-wrapper {
+  position: relative;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-arrow {
+  background: var(--bg); /* Added background to prevent text overlap */
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+[data-theme="light"] .scroll-arrow {
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.scroll-arrow:hover {
+  color: var(--text);
+  border-color: var(--text-secondary);
+}
+
+.scroll-arrow.left-arrow {
+  left: -15px;
+}
+
+.scroll-arrow.right-arrow {
+  right: -15px;
+}
+
+.category-tabs {
+  flex-grow: 1;
+  padding: 0 2rem;
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
+  scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
 }

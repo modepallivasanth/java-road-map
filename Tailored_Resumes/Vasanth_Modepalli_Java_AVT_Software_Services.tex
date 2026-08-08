@@ -1,0 +1,79 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=0.4in,right=0.4in,top=0.3in,bottom=0.3in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Section format
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{2pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{Vasanth Modepalli}} \\ \vspace{2pt}
+    Java Developer $|$ 4 Years Experience \\ \vspace{1pt}
+    Bangalore, India $|$ +91-8500149037 $|$ \href{mailto:vasanthmodepalli@gmail.com}{vasanthmodepalli@gmail.com} \\ \vspace{2pt}
+    \href{https://linkedin.com/in/}{LinkedIn} $|$ \href{https://github.com/}{GitHub} $|$ \href{https://portfolio.com/}{Portfolio}
+\end{center}
+
+\section*{PROFESSIONAL SUMMARY}
+Java Developer with 4 years of experience designing, building, and optimizing high-throughput backend systems using Java, Spring Boot, REST APIs, and Oracle SQL. Demonstrated expertise in backend automation, microservices, and query tuning to enhance performance. Experienced in end-to-end service ownership, dynamic integrations, and production issue resolution.
+
+\section*{TECHNICAL SKILLS}
+\textbf{Languages:} Java 8/17, SQL, PL/SQL, Python, Kafka \\
+\textbf{Frontend:} React, JavaScript (ES6+), HTML5, CSS3 \\
+\textbf{Backend:} Spring Boot, Spring MVC, REST APIs, Microservices, Hibernate, Spring Data JPA, FastAPI \\
+\textbf{Databases:} Oracle, MySQL, PostgreSQL, Redis \\
+\textbf{Tools:} Git, Postman, Maven, IntelliJ, Docker, Linux, Cron Jobs \\
+\textbf{Concepts:} Backend Automation, RCA, API Integration, SQL Optimization, Data Reconciliation, Production Debugging
+
+\section*{PROFESSIONAL EXPERIENCE}
+\textbf{Infosys Ltd.} \hfill \textbf{Jan 2024 - Present} \\
+\textit{Senior Systems Engineer --- Java Full Stack Developer}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Designed and developed backend modules in Java and Spring Boot for taxpayer-facing government portal services, contributing to features used by millions of users across high-traffic filing cycles.
+    \item Built React-based frontend forms for taxpayer data entry workflows on the income tax portal, integrating UI components with backend REST APIs for structured, validated data submissions.
+    \item Engineered REST API enhancements and backend fixes across service and database layers --- analyzed API contracts, service interactions, and DB schemas to implement correct, production-safe changes independently.
+    \item Architected and built an automated reconciliation pipeline using Python and Oracle SQL that generates JSON payloads and triggers downstream feed processing --- reducing a multi-hour manual process to under 5 minutes for 4k--5k records.
+    \item Designed and implemented 22 dynamic email notification templates using FreeMarker-based HTML, integrating them end-to-end with backend communication services and notification dispatch logic.
+    \item Optimized complex SQL queries and stored procedures, improving backend data retrieval performance by approximately 25\% during peak filing loads --- identified bottlenecks through query plan analysis and index tuning.
+    \item Diagnosed and resolved critical production issues including feed failures, API contract mismatches, and database inconsistencies --- performed structured RCA by tracing service logs, SQL execution paths, and interface payloads.
+    \item Collaborated on backend service design decisions, reviewing data flow across microservices and ensuring consistency between API responses and downstream system expectations.
+\end{itemize}
+
+\textbf{Infosys Ltd.} \hfill \textbf{Nov 2022 - Jan 2024} \\
+\textit{Systems Engineer --- Java Backend Developer}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Developed and maintained backend components for critical income tax portal workflows, ensuring system correctness during high-volume filing periods with concurrent user spikes.
+    \item Designed and executed API contract validation across backend services, ensuring correct data flow and catching integration regressions before they reached production.
+    \item Built SQL-based diagnostic utilities to trace data inconsistencies across backend services, enabling faster resolution of data integrity issues in production.
+    \item Identified and resolved root causes of backend failures across Java services, SQL layers, and external interface payloads --- reducing repeat incidents through permanent code and query-level fixes.
+\end{itemize}
+
+\section*{KEY PROJECT}
+\textbf{Scalable URL Shortener Service} \hfill Java 17, Spring Boot, MySQL, Redis, Docker
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Designed and built a production-grade RESTful URL shortener service using Base62 encoding with collision-safe ID generation.
+    \item Implemented a Redis caching layer with TTL-based expiry to serve high-frequency redirects with sub-millisecond latency, reducing database load significantly.
+    \item Built an analytics module to track click counts, referrer patterns, and usage trends per shortened URL.
+    \item Enforced input integrity using DTO-level validation and designed a centralized exception handling layer with structured error responses.
+    \item Containerized the full application stack using Docker for environment-consistent local and deployment setup.
+\end{itemize}
+
+\section*{EDUCATION}
+\textbf{B.Tech Mechanical Engineering} \hfill 2018--2022 \\
+Sasi Institute of Technology and Engineering
+
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Infosys Certified Spring Boot Developer
+    \item Infosys Certified Java SE8 Developer
+    \item Solved 150+ DSA problems on LeetCode
+\end{itemize}
+
+\end{document}

@@ -38,6 +38,43 @@
     });
   });
 
+  const categoryTabsContainer = document.getElementById('categoryTabs');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  if (categoryTabsContainer && leftArrow && rightArrow) {
+    leftArrow.addEventListener('click', () => {
+      categoryTabsContainer.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    
+    rightArrow.addEventListener('click', () => {
+      categoryTabsContainer.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+
+    const updateArrows = () => {
+      if (categoryTabsContainer.scrollLeft <= 0) {
+        leftArrow.style.opacity = '0.3';
+        leftArrow.style.cursor = 'default';
+      } else {
+        leftArrow.style.opacity = '1';
+        leftArrow.style.cursor = 'pointer';
+      }
+      
+      if (categoryTabsContainer.scrollLeft + categoryTabsContainer.clientWidth >= categoryTabsContainer.scrollWidth - 1) {
+        rightArrow.style.opacity = '0.3';
+        rightArrow.style.cursor = 'default';
+      } else {
+        rightArrow.style.opacity = '1';
+        rightArrow.style.cursor = 'pointer';
+      }
+    };
+    
+    categoryTabsContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    // Initial check
+    setTimeout(updateArrows, 100);
+  }
+
   function applyCategoryFilter() {
     allSections.forEach(section => {
       const sectionCat = section.getAttribute('data-category');
